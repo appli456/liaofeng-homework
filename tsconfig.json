@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "checkJs": false
+  },
+  "include": [
+    "packages/*"
+  ],
+  "exclude": [
+    "node_modules",
+    ".eslintrc.js",
+    "babel.config.js",
+    "jest.config.js",
+    "scripts",
+    "examples"
+  ]
+}
