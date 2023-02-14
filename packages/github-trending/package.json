@@ -1,0 +1,9 @@
+{
+  "name": "github-trending",
+  "version": "1.0.0",
+  "scripts": {
+    "start": ""
+  },
+  "dependencies": {
+  }
+}

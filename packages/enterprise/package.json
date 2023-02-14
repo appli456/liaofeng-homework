@@ -1,6 +1,11 @@
 {
   "name": "enterprise",
   "version": "1.0.0",
-  "dependencies": {
+  "scripts": {
+    "start": "",
+    "tailwind:watch": " npx tailwindcss -i ./styles/index.css -o ./dist/output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.2.6"
   }
 }
