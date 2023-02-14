@@ -89,3 +89,11 @@
 .selected-slider-circle .slider-circle-wrapper {
   display: block;
 }
+
+.slider-text {
+  transform: translate(-50%, -50%);
+}
+
+.slider-title {
+  font-size: 48px;
+}
