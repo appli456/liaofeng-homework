@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  width: 100%;
+}
+
 body {
-  overflow-x: hidden;
+  width: 100%;
 }
 
 .slider {
@@ -88,10 +92,12 @@ body {
 }
 
 .slider-container {
-
+  overflow: hidden;
 }
 
 .slider-item {
+  width: 100%;
+  height: 800px;
   opacity: 0;
   margin-right: -100%;
   transition: opacity 500ms linear 0s;
@@ -126,8 +132,14 @@ body {
 }
 
 .culture {
-  background: rgba(0, 0, 0, 0.7);
+  height: 520px;
+  background: url("https://s3-alpha-sig.figma.com/img/aa11/279d/05cfe8933c38a50e0c4cf73e39995a32?Expires=1677456000&Signature=FsXM1rxnCieYQ3z0pvRtxds6w5zsYXxHxL7ct~tLBVddv~NqZddPg4FCcnpkNoVx0tayZ-L2YP0qB47HkUxAKP3Iu1gO2VmedKaPv7IR2xRpASgqm0uGfj4Wo6Eax9cnNX6nyikebbMv9n34JedaNVSqC0PjwGBRVJuABNA1D1xqxuTPe1bmAIBmjvKZmRQJOyo1~AtxsneX6ynDQqFv30ST-hz9Q6~A-pygi48GS9eEj5ilvnLKee6yWsigsGfICImD3VPYpwFrIt1jIhmCvNbHvgLn-raFtpqrbucW7leW3vM0QQyTBD7HzuLi~xhsdQdSaMWxX0opxVId0WtoAg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4") no-repeat center;
+}
+
+.culture-mask {
+  height: 100%;
   padding: 92px 10% 117px;
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .culture-text {
@@ -298,4 +310,14 @@ footer {
 
 .footer-text + .footer-text{
   margin-left: 6%;
+}
+
+
+.navbar {
+  background: #252429;
+}
+
+.news-list-container {
+  padding-left: 8%;
+  padding-right: 8%;
 }
