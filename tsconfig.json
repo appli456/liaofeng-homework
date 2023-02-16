@@ -1,13 +1,22 @@
 {
   "compilerOptions": {
     "module": "CommonJS",
+    "target": "ESNext",
+    "lib": [
+      "DOM",
+      "ESNext"
+    ],
+    "strict": true,
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,
     "sourceMap": true,
     "jsx": "react-jsx",
     "allowJs": true,
-    "checkJs": false
+    "checkJs": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "strictNullChecks": true,
   },
   "include": [
     "packages/*"

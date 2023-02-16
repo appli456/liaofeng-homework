@@ -610,3 +610,7 @@ FodyWeavers.xsd
 *.sln.iml
 
 .idea
+
+packages/enterprise/styles/output.css
+
+build

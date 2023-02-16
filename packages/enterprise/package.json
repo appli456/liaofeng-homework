@@ -2,8 +2,9 @@
   "name": "enterprise",
   "version": "1.0.0",
   "scripts": {
-    "start": "",
-    "tailwind:watch": " npx tailwindcss -i ./styles/index.css -o ./dist/output.css --watch"
+    "start": "npm run tailwind:watch",
+    "tailwind:watch": "npx tailwindcss -i ./styles/index.css -o ./styles/output.css --watch",
+    "tailwind:build": "npx tailwindcss -i ./styles/index.css -o ./styles/output.css --minify"
   },
   "devDependencies": {
     "tailwindcss": "^3.2.6"
