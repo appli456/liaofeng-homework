@@ -21,47 +21,119 @@
         <div class="flex flex-row items-center">
           <a href="./index.html" class="text-white text-sm header-link">首页</a>
           <a href="./news-list.html" class="text-white text-sm header-link header-link-active">新闻页列表</a>
-          <a class="text-white text-sm header-link">关于我们</a>
+          <a href="./about.html" class="text-white text-sm header-link">关于我们</a>
         </div>
       </div>
     </div>
   </header>
 
-  <section>
-    <div>
-      <p>News list page</p>
+  <section class="relative">
+    <div class="absolute top-8 z-0 news-list-float">
+      <p class="whitespace-nowrap break-keep">News list page</p>
     </div>
-    <div class="flex flex-1 flex-col items-center justify-center">
+    <div class="relative flex flex-1 flex-col items-center justify-center z-10 news-list-title">
       <p class="text-black text-5xl">新闻列表页</p>
       <div class="w-32 h-1.5 mt-8 section-title-underline"></div>
     </div>
-    <div class="relative z-10 flex flex-1 flex-row grid grid-cols-4 items-start pb-8 news-list-container">
-      <div class="flex flex-1 flex-col items-start news-card">
-        <div class="bg-no-repeat bg-cover bg-center bg-origin-content news-image news-image-1"></div>
-        <div>
-          <p class="text-black text-xl leading-9 font-bold mb-7">
-            2022百度AI大会前夕，解读百度大脑的半年“豹变”
-          </p>
-          <p class="text-black text-sm leading-7">
-            Facebook为未来的VR社交打造了一款逼真的虚拟头像系统，该系统的特点是，利用数百颗摄像头对人脸进行动作捕捉，并能生成与人脸相似度很高的虚拟头像，这些头像还能模仿人脸的大量表情。
-          </p>
+    <div class="relative z-10 flex flex-1 flex-row grid grid-cols-4 items-start justify-start news-list-container">
+      <a href="news-detail.html" class="news-card">
+        <div class="flex flex-1 flex-col items-start">
+          <div class="bg-no-repeat bg-cover bg-center bg-origin-content news-image news-image-1"></div>
+          <div>
+            <p class="text-black text-xl leading-9 font-bold mb-7">
+              2022百度AI大会前夕，解读百度大脑的半年“豹变”
+            </p>
+            <p class="text-black text-sm leading-7">
+              Facebook为未来的VR社交打造了一款逼真的虚拟头像系统，该系统的特点是，利用数百颗摄像头对人脸进行动作捕捉，并能生成与人脸相似度很高的虚拟头像，这些头像还能模仿人脸的大量表情。
+            </p>
+          </div>
         </div>
-      </div>
+      </a>
 
-      <div class="flex flex-1 flex-col items-start news-card">
-        <div class="bg-no-repeat bg-cover bg-center bg-origin-content news-image news-image-2"></div>
-        <div>
-          <p class="text-black text-xl leading-9 font-bold mb-7">
-            创投早报｜美国商业化核聚变创企获投；音乐版权公司完成融资
-          </p>
-          <p class="text-black text-sm leading-7">
-            举办第六届中华印制大奖颁奖典礼、亚洲印刷展览联盟会议、国家主题日等多场专业、先进、丰富的同期活动，全面把握产业趋势与动态，共同探讨印刷业现状和未来。
-          </p>
+      <a href="news-detail.html" class="news-card">
+        <div class="flex flex-1 flex-col items-start">
+          <div class="bg-no-repeat bg-cover bg-center bg-origin-content news-image news-image-2"></div>
+          <div>
+            <p class="text-black text-xl leading-9 font-bold mb-7">
+              创投早报｜美国商业化核聚变创企获投；音乐版权公司完成融资
+            </p>
+            <p class="text-black text-sm leading-7">
+              举办第六届中华印制大奖颁奖典礼、亚洲印刷展览联盟会议、国家主题日等多场专业、先进、丰富的同期活动，全面把握产业趋势与动态，共同探讨印刷业现状和未来。
+            </p>
+          </div>
         </div>
-      </div>
+      </a>
 
-      <div class="flex flex-1 flex-col items-start news-card">
-        <div class="bg-no-repeat bg-cover bg-center bg-origin-content news-image news-image-3"></div>
+      <a href="news-detail.html" class="news-card">
+        <div class="flex flex-1 flex-col items-start">
+          <div class="bg-no-repeat bg-cover bg-center bg-origin-content news-image news-image-3"></div>
+          <div>
+            <p class="text-black text-xl leading-9 font-bold mb-7">
+              【千龙网】广告行业标准指导性意见将出台
+            </p>
+            <p class="text-black text-sm leading-7">
+              国际印刷工业发展论坛由中国印刷及设备器材工业协会主办，始创于2005年，四年一届，已成功举办三届，每届论坛选择5-6个发达国家和5-6个发展中国家印刷协会的主席或总裁发表演讲
+            </p>
+          </div>
+        </div>
+      </a>
+
+      <a href="news-detail.html" class="news-card">
+        <div class="flex flex-1 flex-col items-start">
+          <div class="bg-no-repeat bg-cover bg-center bg-origin-content news-image news-image-4"></div>
+          <div>
+            <p class="text-black text-xl leading-9 font-bold mb-7">
+              支持触觉反馈，Manus VR推出全新Prime VR手套
+            </p>
+            <p class="text-black text-sm leading-7">
+              第三届国际印刷工业发展论坛（Forum-PI 2013）于2013年5月13日在北京举行，主办方邀请了来自中国、美国、德国、英国、意大利、日本、澳大利亚、俄罗斯、印度、印尼、南非、巴西、
+            </p>
+          </div>
+        </div>
+      </a>
+
+      <a href="news-detail.html" class="news-card">
+        <div class="flex flex-1 flex-col items-start">
+          <div
+            class="bg-no-repeat bg-cover bg-center bg-origin-content news-image"
+            style="background-image: url('https://s3-alpha-sig.figma.com/img/31af/c4cf/1845785286e46f38b768650d308766d6?Expires=1677456000&Signature=VqeZrQpA1ABu2ARhERCYtnSeQ2AH2YhwoSnlC4nCr9u0EcltQY1e7jrgBuYBmBwCgsLFlI4Q4-8pYafE6~Fy3UUQSakJGJ7UMcq52RTF5Le8LSWTu~ySPWF8ePSfcgodFDxBhqDwBoeFvz8VIKoUv~jST2q5E9t7WSAIU4dLXKhQP47bObIUyCJbq5UajeFyadgim4bs4YDaiDBnpon7ZaTRPjT01RGob7agvNJGjLwGWg8TyQqHvBtFJ-AkkNXpFwN2wdf4aoc6Xd7xz0jniYZakvx6Vl~0gOFJiQs0w1uxpQki1sUiEmo0SSd0SuEZVSxPcRe9y1N5oQ5imBMIXw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4')"
+          >
+          </div>
+          <div>
+            <p class="text-black text-xl leading-9 font-bold mb-7">
+              2022百度AI大会前夕，解读百度大脑的半年“豹变”
+            </p>
+            <p class="text-black text-sm leading-7">
+              Facebook为未来的VR社交打造了一款逼真的虚拟头像系统，该系统的特点是，利用数百颗摄像头对人脸进行动作捕捉，并能生成与人脸相似度很高的虚拟头像，这些头像还能模仿人脸的大量表情。
+            </p>
+          </div>
+        </div>
+      </a>
+
+      <a href="news-detail.html" class="news-card">
+        <div class="flex flex-1 flex-col items-start">
+          <div
+            class="bg-no-repeat bg-cover bg-center bg-origin-content news-image"
+            style="background-image: url('https://s3-alpha-sig.figma.com/img/6da1/16a8/a335374b631ee89d78848c07bea7bff5?Expires=1677456000&Signature=NeP43ZjWwk~rJjMoF4p0p3dbh6zGEOk6lg4rtVbTlfWo1He3xN8pf---jHrviLqYbWVNy1esB5Ux6pxXDBVbeE~obnL2ewAzOcqAA96KFfzUveoN9PWDZVfGD6UGFMBiLQA6g65bekDhxu7iKrkZ8AQqUWRqPNhLbvmwZTI~IJEAxHrvCVmFqz0Pji2W3Aseqjr8IFhqhAPQghFv5niVPOyrKetBDLBy52yGuBpZ5De7Kh-7genNyhFn6cMtd7Ryk2oEp6KRGpsKOY2sutorUQ-7SwrjFV2-uo0n~bYiv6DVPdJiizZuz0ea9jwU8xfxKgUnRAcDl8S2vuZ25Joyig__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4')"
+          >
+          </div>
+          <div>
+            <p class="text-black text-xl leading-9 font-bold mb-7">
+              创投早报｜美国商业化核聚变创企获投；音乐版权公司完成融资
+            </p>
+            <p class="text-black text-sm leading-7">
+              举办第六届中华印制大奖颁奖典礼、亚洲印刷展览联盟会议、国家主题日等多场专业、先进、丰富的同期活动，全面把握产业趋势与动态，共同探讨印刷业现状和未来。
+            </p>
+          </div>
+        </div>
+      </a>
+
+      <a href="news-detail.html" class="news-card">
+      <div class="flex flex-1 flex-col items-start">
+        <div
+          class="bg-no-repeat bg-cover bg-center bg-origin-content news-image"
+          style="background-image: url('https://s3-alpha-sig.figma.com/img/61dc/f9b8/6d3661fff636966f5efebd8728923dac?Expires=1677456000&Signature=lQycOlpRQQYiY0fa9NG5A8lmQDUV2xo9OZotgsYkVNGh97v9sIs4dxoc6W3zX5WwK-6FTvW4i0dLh1OlJ5xXkOg9PmQzEIH549vWFG1zPj9uS8XFJzJvjcVYiqgQenrYKmmzXjfcyNpO-OfQxnn6dTOYo8DnkW--R4McHD7hpAGK7VjIsM~A1zJ2vox3LPIOPkzg9AlhdUK8sdKBsLNBFb8ICL2DjNrc7BGOrDPOaINiPFReqGiOKu3c~58uTomYZodMPCKWKiWBf7NPYG26keRWXs~RS44TJA43zr0ffPmptf~hp1gfsEg1mal4QisPxTxgPTt8IgGYOzZssR94dg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4')"
+        ></div>
         <div>
           <p class="text-black text-xl leading-9 font-bold mb-7">
             【千龙网】广告行业标准指导性意见将出台
@@ -71,23 +143,50 @@
           </p>
         </div>
       </div>
+      </a>
 
-      <div class="flex flex-1 flex-col items-start news-card">
-        <div class="bg-no-repeat bg-cover bg-center bg-origin-content news-image news-image-4"></div>
-        <div>
-          <p class="text-black text-xl leading-9 font-bold mb-7">
-            支持触觉反馈，Manus VR推出全新Prime VR手套
-          </p>
-          <p class="text-black text-sm leading-7">
-            第三届国际印刷工业发展论坛（Forum-PI 2013）于2013年5月13日在北京举行，主办方邀请了来自中国、美国、德国、英国、意大利、日本、澳大利亚、俄罗斯、印度、印尼、南非、巴西、
-          </p>
+      <a href="news-detail.html" class="news-card">
+        <div class="flex flex-1 flex-col items-start">
+          <div
+            class="bg-no-repeat bg-cover bg-center bg-origin-content news-image"
+            style="background-image: url('https://s3-alpha-sig.figma.com/img/a38a/0a20/3617af33f357879d1083126ffc5dcd2d?Expires=1677456000&Signature=TYHgCRHfyNYmtHtEXXJXU4Lsw5YHBUMMc7C7M724JKq-s2ttDFMfewajt7BCPpLeVzC0O2mI4bVeVGoppgQBLacANZmRjA-fzDtvSMe3m4kEbwxTiOMvK~EkDvRBNlD08gC9k6dqFHWjeJi05JjsJB-gBNYXt1Iv5PpT~5KtXZSjy4HR5YeZbmJ~F0X0sUcHNRzG~jnlOIbz96ztQsejg8zGu6ujprXUL6Ar3qQGR70c49SaSMOM26eKoKKzHQ90Qv1C-YZ9fLJNFCQFQgGSiLIkNj~H~ibz~ixoEYtoOSav0QQrHFQdxLO-pNtsiyI3XFxpo6yp0cVO2cYZdTMe1A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4')"
+          ></div>
+
+          <div>
+            <p class="text-black text-xl leading-9 font-bold mb-7">
+              支持触觉反馈，Manus VR推出全新Prime VR手套
+            </p>
+            <p class="text-black text-sm leading-7">
+              第三届国际印刷工业发展论坛（Forum-PI 2013）于2013年5月13日在北京举行，主办方邀请了来自中国、美国、德国、英国、意大利、日本、澳大利亚、俄罗斯、印度、印尼、南非、巴西、
+            </p>
+          </div>
         </div>
-      </div>
-
-
+      </a>
     </div>
   </section>
 
-  <footer></footer>
+  <footer class="py-12">
+    <div class="flex flex-row justify-center">
+      <span class="text-white footer-text">
+        地址：中国山东省青岛市市南区某某中路20号
+      </span>
+      <span class="text-white footer-text">
+        邮箱：1370XXX171@qq.com
+      </span>
+      <span class="text-white footer-text">
+        电话：0591-88888888
+      </span>
+    </div>
+    <div class="flex flex-row justify-center items-center mt-12">
+      <img
+        class="qrcode"
+        src="../media/qrcode.png"
+        alt="QrCode"
+      />
+      <p class="ml-3 text-white">
+        Copyright © 2009 - 2022 Cld , All Rights Reserved 某某网络科技有限公司 版权所有  陕ICP备xxxxxxx号
+      </p>
+    </div>
+  </footer>
 </body>
 </html>
