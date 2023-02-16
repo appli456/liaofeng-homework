@@ -362,3 +362,8 @@ footer {
 .content-text::before {
   content: '\2003\2003';
 }
+
+#map {
+  width: 750px;
+  height: 309px;
+}
