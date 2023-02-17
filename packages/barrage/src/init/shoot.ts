@@ -5,14 +5,17 @@ function initShoot() {
   const screen = $('#barrage-screen');
   const input = $('#barrage-input');
   $('#barrage-shoot').on('click', () => {
-    const inputValue = input.val().toString();
+    const inputValue = (input.val() as string).toString();
     if (!inputValue.length) {
       return;
     }
 
+    const width = screen.width();
+    const height = screen.height();
+
     const barrage = new Barrage(inputValue, {
-      width: screen.width(),
-      height: screen.height(),
+      width: width ? width : 0,
+      height: height ? height : 0,
     });
     screen
       .append(barrage.getElement());

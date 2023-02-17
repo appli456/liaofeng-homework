@@ -4,10 +4,9 @@
   "description": "homework",
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "build": "npx ts-node ./scripts/build.ts",
+    "build": "npm run clean && npx ts-node ./scripts/build.ts",
     "clean": "npx ts-node ./scripts/clean.ts",
-    "test": "jest",
-    "build:barrage": "vite build ./packages/barrage"
+    "test": "jest"
   },
   "author": "",
   "license": "MIT",
