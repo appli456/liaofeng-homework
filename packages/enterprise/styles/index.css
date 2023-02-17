@@ -10,6 +10,10 @@ body {
   width: 100%;
 }
 
+* {
+  font-family: Microsoft YaHei UI;
+}
+
 .slider {
   position: relative;
 }
@@ -361,6 +365,10 @@ footer {
 
 .content-text::before {
   content: '\2003\2003';
+}
+
+.about-content {
+  width: 1560px
 }
 
 #map {

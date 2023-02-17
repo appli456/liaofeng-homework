@@ -6,8 +6,14 @@
   <title>企业站——关于我们</title>
   <link rel="stylesheet" href="../styles/output.css">
   <script src="//api.map.baidu.com/api?type=webgl&v=1.0&ak=butDE9e2vGHzixAHbh0xyzdYGd4OvwWr"></script>
+  <style>
+    html, body {
+      height: 100%
+    }
+  </style>
 </head>
 <body>
+<div class="min-h-full flex flex-col">
 <header class="navbar">
   <div class="top-0 w-full z-10">
     <div class="flex justify-between flex-row items-center flex-auto pl-12 py-8 slider-header">
@@ -28,7 +34,7 @@
   </div>
 </header>
 
-<section class="relative">
+<section class="relative pb-4">
   <div class="absolute top-8 z-0 news-list-float">
     <p class="whitespace-nowrap break-keep">About us</p>
   </div>
@@ -36,28 +42,45 @@
     <p class="text-black text-5xl">关于我们</p>
     <div class="w-32 h-1.5 mt-8 section-title-underline"></div>
   </div>
-  <div>
-    <div id="map"></div>
-    <div>
-      <p>一家专注系统高端定制开发的公司</p>
-      <p>互联网指的是是网络与网络之间所串连成的庞大网络，这些网络以一组通用的协议相连，形成逻辑上的单一巨大国际网络。</p>
-      <p>互联网始于1969年美国的阿帕网。这种将计算机网络互相联接在一起的方法可称作“网络互联”，在这基础上发展出覆盖全世界的全球性互联网络称互联网，即是互相连接一起的网络结构。</p>
-      <p>我们出色的专业开发团队扎实的技术支持，优质高效的服务意识和丰厚的资源优势，提供专业的网站建设，微信小程序，APP开发，等技术服务。成果，专注于为客户提供专业有效的互联网系统解决方案。</p>
+  <div class="relative flex justify-center">
+    <div class="relative flex flex-row items-center about-content">
+      <div id="map"></div>
+      <div class="ml-9">
+        <p class="text-2xl leading-7 font-bold mb-6">一家专注系统高端定制开发的公司</p>
+        <p>互联网指的是是网络与网络之间所串连成的庞大网络，这些网络以一组通用的协议相连，形成逻辑上的单一巨大国际网络。</p>
+        <p>互联网始于1969年美国的阿帕网。这种将计算机网络互相联接在一起的方法可称作“网络互联”，在这基础上发展出覆盖全世界的全球性互联网络称互联网，即是互相连接一起的网络结构。</p>
+        <p>我们出色的专业开发团队扎实的技术支持，优质高效的服务意识和丰厚的资源优势，提供专业的网站建设，微信小程序，APP开发，等技术服务。成果，专注于为客户提供专业有效的互联网系统解决方案。</p>
 
-      <div>
-        <p>地址：中国山东省青岛市市南区某某中路20号</p>
-      </div>
-      <div>
-        <p>邮箱：1370XXX171@qq.com</p>
-      </div>
-      <div>
-        <p>电话：0591-88888888</p>
+        <div class="mt-6 flex items-center">
+          <img
+            class="w-4 h-4 mr-3.5"
+            src="../media/location.png"
+            alt=""
+          />
+          <p>地址：中国山东省青岛市市南区某某中路20号</p>
+        </div>
+        <div class="mt-4 flex items-center">
+          <img
+            class="w-4 h-4 mr-3.5"
+            src="../media/email.png"
+            alt=""
+          />
+          <p>邮箱：1370XXX171@qq.com</p>
+        </div>
+        <div class="mt-4 flex items-center">
+          <img
+            class="w-4 h-4 mr-3.5"
+            src="../media/phone.png"
+            alt=""
+          />
+          <p>电话：0591-88888888</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<footer class="py-12">
+<footer class="mt-auto py-12 w-full">
   <div class="flex flex-row justify-center">
       <span class="text-white footer-text">
         地址：中国山东省青岛市市南区某某中路20号
@@ -80,6 +103,7 @@
     </p>
   </div>
 </footer>
+</div>
 <script src="../js/map.js"></script>
 </body>
 </html>
