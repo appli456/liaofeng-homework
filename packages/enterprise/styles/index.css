@@ -19,12 +19,17 @@ body {
 }
 
 .slider-header {
-  padding-right: 14%;
+  padding-right: 42px;
 }
 
 .header-title {
   margin-left: 16px;
-  font-size: 20px;
+  font-size: 28px;
+}
+
+.content-image {
+  width: 38px;
+  height: 38px;
 }
 
 .header-link {
@@ -101,7 +106,7 @@ body {
 
 .slider-item {
   width: 100%;
-  height: 800px;
+  height: 540px;
   opacity: 0;
   margin-right: -100%;
   transition: opacity 500ms linear 0s;
@@ -158,13 +163,12 @@ body {
 }
 
 .service-scope-text {
-  margin-top: 90px;
+  margin-top: 64px;
   margin-left: 54px;
-  font-family: 'Microsoft YaHei UI';
   font-style: normal;
   font-weight: 400;
-  font-size: 128px;
-  line-height: 163px;
+  font-size: 64px;
+  line-height: 81px;
   color: #D9D9D9;
 }
 
@@ -179,13 +183,15 @@ body {
 }
 
 .service-content {
-  margin-top: 33px;
-  margin-right: 57px;
+  margin-top: 115px;
+  margin-left: 54px;
+  margin-right: 54px;
 }
 
 
 .service-content-text {
-  margin-top: 54px;
+  margin-top: 24px;
+  line-height: 54px;
   color: #8B8B8B;
 }
 
@@ -194,27 +200,25 @@ body {
 }
 
 .image-2 {
-  width: 700px;
-  height: 600px;
+  width: 466px;
+  height: 386px;
   background-image: url("https://s3-alpha-sig.figma.com/img/75de/b22b/d3d911307ad7f0c62545d74ed591ac23?Expires=1677456000&Signature=U3Wn32o1vTV4EW8oZ~9PdoTCtZw7BPb-g-dICg3Ihy~LGZWFm68mw~9UJMjUgGgrXikqY~onlFXi8RQs4im~rY6baBMldCfO0O2rN9CdKNz-O~GSsL3uY0ktYJlaT2S7FagIJ1zeB4shq~4PZuD2aVCSx5UNBDH4IIahM2Un8Lw6CDBK~rWTvwnjlfDISnlXQE97twEGNn0QmdF~nbG8vcmwSR~zmGoDBLDrQW-GK1mLcDutinD9w1KBIeGSTwYycV3JEmuQT-l~hmvG1394GGH-MDSbbuVUB6-Bdk~EGKa-HUbhxMg1Kh0acKStQ7tbofRYR-FipHvAxS5yQsp~HA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4");
 }
 
 .image-3 {
-  width: 658px;
-  height: 484px;
+  width: 436px;
+  height: 316px;
   background-image: url("https://s3-alpha-sig.figma.com/img/b4ff/95a3/00f03b592ee4c987f339ef0e35d25487?Expires=1677456000&Signature=jr0pjBGXEP9SyosXQas0Iik0iAS3l-xaKHoNcqGU~et-bXZCJpxCTKYXZaqNRrZK7AE7rBCZCmWkHJQve7IwXkne0tsTU56z~05AAkNno5QNo1yzRJbm4jApWjoz8LnRiaPWTa1KtDZvszGGWI1sd1~Ml4kNFPMzJYBC69GSpDgiYOeSjb94X6d53TzN0O81uCI2ytUQYkvY7wAWOcFDz17VdwmR19i-Wqj3PITQ~fFcD2nDVxYGUMviUYjKQEn4ggOdR4lIKNyX8VGfUPXIstlJRPejX4aT6W1w9IR-jslwFUCknBOlKmzaRgtQz7e8eRnFiv7-Ljt8~n40wfZlzw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4");
 }
 
 .image-4 {
-  width: 460px;
-  height: 300px;
+  width: 308px;
+  height: 196px;
   background-image: url("https://s3-alpha-sig.figma.com/img/52e9/21d0/b1fff1c9a3b7eda03559b8e7962bcf8b?Expires=1677456000&Signature=FSgns-X8DtdYeBBxb2slKuAAnsaJFfzipvSALphY8SiP0Q8iNZwONqg3OmklSOjShNW8QZJplntB9nrEh59OQOlC6XYpN~7dcVY9xN~Gl3ShuS51XvVGBSKGvrZb3DaPK~iLePpK6iRNSTw8Vrv48ef4S83ztgGUqgzlCq7RcCQBhPVj1FTzABMXDLzi5rPSmMDoBNhFmQ6LEU4pDXtO2sTWzFl4uBao19jZzKTbEFmPxukLlZkVnj4cex0JCW2ZwRGuqCPKqXlOggo3QR-9hyJeA1Fq2jgmiMCoBop-ukaCnvCQhD9Nfq5ZBBx7esoucvAuG1vGKna1L6Bdyj5VfA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4");
 }
 
 .service-line-1 {
-  margin-top: 172px;
-  margin-left: 172px;
-  margin-bottom: 32px;
+
 }
 
 .introduce {
@@ -262,9 +266,9 @@ body {
 
 .news {
   background: #252429;
-  padding-left: 8%;
-  padding-right: 8%;
-  padding-top: 172px;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-top: 98px;
 }
 
 .trend-scope {
@@ -279,8 +283,8 @@ body {
 }
 
 .news-card {
-  margin-left: 33px;
-  margin-right: 33px;
+  margin-left: 14px;
+  margin-right: 14px;
   margin-bottom: 54px;
 }
 
@@ -314,11 +318,6 @@ footer {
   width: 50px;
   height: 50px;
 }
-
-.footer-text + .footer-text{
-  margin-left: 6%;
-}
-
 
 .navbar {
   background: #252429;
@@ -374,4 +373,71 @@ footer {
 #map {
   width: 750px;
   height: 309px;
+}
+
+@media all and (min-width: 768px) {
+  .slider-header {
+    padding-right: 14%;
+  }
+
+  .header-title {
+    font-size: 20px;
+  }
+
+  .slider-item {
+    height: 800px;
+  }
+
+  .service-scope-text {
+    margin-top: 90px;
+    margin-left: 54px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 128px;
+    line-height: 163px;
+  }
+
+  .service-line-1 {
+    margin-top: 172px;
+    margin-left: 172px;
+    margin-bottom: 32px;
+  }
+
+  .service-content {
+    margin-top: 33px;
+    margin-right: 57px;
+  }
+
+  .service-content-text {
+    margin-top: 54px;
+    line-height: 45px;
+  }
+
+  .image-2 {
+    width: 700px;
+    height: 600px;
+  }
+
+  .image-3 {
+    width: 658px;
+    height: 484px;
+  }
+
+  .image-4 {
+    width: 460px;
+    height: 300px;
+  }
+  .news-card {
+    margin-left: 33px;
+    margin-right: 33px;
+    margin-bottom: 54px;
+  }
+  .news {
+    padding-left: 8%;
+    padding-right: 8%;
+    padding-top: 172px;
+  }
+  .footer-text + .footer-text{
+    margin-left: 6%;
+  }
 }

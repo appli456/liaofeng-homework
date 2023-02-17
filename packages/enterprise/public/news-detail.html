@@ -12,16 +12,21 @@
     <div class="flex justify-between flex-row items-center flex-auto pl-12 py-8 slider-header">
       <div class="flex flex-row items-center">
         <img
-          class="w-9 h-9"
+          class="w-12 h-12 md:w-9 md:h-9"
           src="../media/img.png"
           alt="logo"
         />
         <span class="text-white font-bold header-title">企业站</span>
       </div>
-      <div class="flex flex-row items-center">
+      <div class="hidden flex-row items-center md:flex">
         <a href="./index.html" class="text-white text-sm header-link">首页</a>
         <a href="./news-list.html" class="text-white text-sm header-link header-link-active">新闻页列表</a>
         <a href="./about.html" class="text-white text-sm header-link">关于我们</a>
+      </div>
+      <div class="flex items-center md:hidden">
+        <img
+          class="content-image"
+          src="../media/content.png" />
       </div>
     </div>
   </div>

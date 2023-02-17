@@ -13,16 +13,21 @@
       <div class="flex justify-between flex-row items-center flex-auto pl-12 pt-8 slider-header">
         <div class="flex flex-row items-center">
           <img
-            class="w-9 h-9"
+            class="w-12 h-12 md:w-9 md:h-9"
             src="../media/img.png"
             alt="logo"
           />
           <span class="text-white font-bold header-title">企业站</span>
         </div>
-        <div class="flex flex-row items-center">
-          <a class="text-white text-sm header-link header-link-active">首页</a>
-          <a href="news-list.html" class="text-white text-sm header-link">新闻页列表</a>
-          <a class="text-white text-sm header-link">关于我们</a>
+        <div class="hidden flex-row items-center md:flex">
+          <a href="./index.html" class="text-white text-sm header-link header-link-active">首页</a>
+          <a href="./news-list.html" class="text-white text-sm header-link">新闻页列表</a>
+          <a href="./about.html" class="text-white text-sm header-link">关于我们</a>
+        </div>
+        <div class="flex items-center md:hidden">
+          <img
+            class="content-image"
+            src="../media/content.png" />
         </div>
       </div>
     </div>
@@ -33,7 +38,7 @@
       >
         <div class="absolute top-1/2 left-1/2 text-white slider-text">
           <p class="text-center font-bold slider-title">开启互联网+ 从我们开始</p>
-          <p class="text-center text-2xl">域名主机，网站建设，云服务器，企业邮箱一站式解决</p>
+          <p class="text-center text-xl md:text-2xl">域名主机，网站建设，云服务器，企业邮箱一站式解决</p>
         </div>
       </div>
 
@@ -43,7 +48,7 @@
       >
         <div class="absolute top-1/2 left-1/2 text-white slider-text">
           <p class="text-center font-bold slider-title">关于我们</p>
-          <p class="text-center text-2xl">企业构建互联网信息技术服务平台，领先技术变革，提升产业效率，致力于使能软件企业引领发展，服务制造企业转型升级，为政企客户提供“多快好省”的信息技术服务。</p>
+          <p class="text-center text-xl md:text-2xl">企业构建互联网信息技术服务平台，领先技术变革，提升产业效率，致力于使能软件企业引领发展，服务制造企业转型升级，为政企客户提供“多快好省”的信息技术服务。</p>
         </div>
       </div>
 
@@ -53,7 +58,7 @@
       >
         <div class="absolute top-1/2 left-1/2 text-white slider-text">
           <p class="text-center font-bold slider-title">新闻中心</p>
-          <p class="text-center text-2xl">几乎所有的伟大成就，都是团队集体协作追求远大目标的结果。这些团队的领导者挑选了团队的成员，并激励他们追求自己不敢想象的成就。</p>
+          <p class="text-center text-xl md:text-2xl">几乎所有的伟大成就，都是团队集体协作追求远大目标的结果。这些团队的领导者挑选了团队的成员，并激励他们追求自己不敢想象的成就。</p>
         </div>
       </div>
     </div>
@@ -93,14 +98,14 @@
 
   <section class="relative">
     <div class="absolute service-scope">
-      <p class="service-scope-text">
+      <p class="whitespace-nowrap break-keep service-scope-text">
         Service scope
       </p>
     </div>
     <div class="flex flex-col justify-end service-background">
-      <div class="flex flex-auto flex-row justify-between service-line-1">
+      <div class="flex flex-auto flex-col md:flex-row justify-between service-line-1">
         <div class="flex flex-col flex-1 service-content">
-          <p class="text-5xl">服务范围</p>
+          <p class="text-5xl break-keep whitespace-nowrap">服务范围</p>
           <p class="text-2xl service-content-text">
             依托百度政务混合云，汇聚城市管理及公安等政务领域的自有数据及互联网公开数据，基于百度大数据多年积累的行业模型及实战经验，提供从数据整合治理到分析挖掘的一站式大数据解决方案，助力智慧政务新时代。
           </p>
@@ -110,7 +115,7 @@
         </div>
         <div class="flex flex-row flex-1 items-end">
           <div
-            class="w-64 h-64 mr-8 bg-no-repeat bg-center bg-cover bg-origin-content image-1"
+            class="w-40 h-40 md:w-64 md:h-64 mr-8 bg-no-repeat bg-center bg-cover bg-origin-content image-1"
           ></div>
           <div
             class="bg-no-repeat bg-center bg-cover bg-origin-content image-2"
@@ -128,7 +133,7 @@
     </div>
   </section>
 
-  <section class="relative bg-cover culture">
+  <section class="relative bg-cover culture hidden md:block">
     <div class="box-border culture-mask">
       <div class="flex flex-1 flex-col items-center justify-center">
         <p class="text-white text-5xl">企业文化</p>
@@ -153,7 +158,7 @@
       <p class="text-black text-5xl">团队介绍</p>
       <div class="w-32 h-1.5 mt-8 section-title-underline"></div>
     </div>
-    <div class="relative flex flex-row items-center flex-1 z-10 grid grid-cols-3">
+    <div class="relative flex flex-row items-center flex-1 z-10 grid grid-cols-1 md:grid-cols-3">
       <div class="flex-1 flex flex-col items-center bg-origin-content bg-center bg-no-repeat bg-cover team-1">
         <p class="text-white text-5xl team-title">Jon Smith</p>
         <p class="text-white text-xl">特级教师，从事教育工作10年</p>
@@ -202,7 +207,7 @@
       <div class="w-32 h-1.5 mt-8 section-title-underline"></div>
     </div>
 
-    <div class="relative z-10 flex flex-1 flex-row grid grid-cols-4 items-start">
+    <div class="relative z-10 flex flex-1 flex-row grid grid-cols-2 md:grid-cols-4 items-start">
       <div class="flex flex-1 flex-col items-start news-card">
         <div class="bg-no-repeat bg-cover bg-center bg-origin-content news-image news-image-1"></div>
         <div>
@@ -253,8 +258,8 @@
     </div>
   </section>
 
-  <footer class="py-12">
-    <div class="flex flex-row justify-center">
+  <footer class="px-16 md:px-0 py-12">
+    <div class="flex flex-col md:flex-row justify-center">
       <span class="text-white footer-text">
         地址：中国山东省青岛市市南区某某中路20号
       </span>
@@ -276,6 +281,10 @@
       </p>
     </div>
   </footer>
-  <script src="../js/animation.js" type="application/javascript"></script>
+  <script
+    src="../js/animation.js"
+    type="application/javascript"
+  >
+  </script>
 </body>
 </html>
