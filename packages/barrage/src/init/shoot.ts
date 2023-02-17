@@ -1,4 +1,4 @@
-import * as $ from 'jquery';
+import $ from 'jquery';
 import Barrage from "../components/Barrage";
 
 function initShoot() {

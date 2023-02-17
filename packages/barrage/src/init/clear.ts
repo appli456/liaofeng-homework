@@ -1,4 +1,4 @@
-import * as $ from 'jquery';
+import $ from 'jquery';
 
 function initClear() {
   const clear = $('#barrage-clear');

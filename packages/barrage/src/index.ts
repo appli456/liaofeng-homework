@@ -1,4 +1,4 @@
-import * as $ from 'jquery';
+import $ from 'jquery';
 
 import { initShoot, initClear } from './init';
 import animateFrame from './utils/animate';

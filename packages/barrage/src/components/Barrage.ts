@@ -1,4 +1,4 @@
-import * as $ from 'jquery';
+import $ from 'jquery';
 import {randomNumber} from "../utils";
 
 interface BarrageOption {
