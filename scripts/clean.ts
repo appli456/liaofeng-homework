@@ -1,4 +1,5 @@
 import fs from "fs";
 import pathConfig from './path.config';
+import { rm } from 'shelljs';
 
-fs.unlinkSync(pathConfig.build);
+rm('-Rf', pathConfig.build)
