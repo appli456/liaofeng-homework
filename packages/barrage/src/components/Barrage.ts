@@ -15,7 +15,7 @@ class Barrage {
       .addClass('barrage')
       .css('color', `rgba(${randomNumber(0, 255)}, ${randomNumber(0, 255)}, ${randomNumber(0, 255)})`)
       .css('top', randomNumber(0, options.height))
-      .css('left', randomNumber(0, options.width))
+      .css('left', options.width)
       .css('font-size', randomNumber(12, 24))
       .attr('data-speed', randomNumber(1, 5));
 

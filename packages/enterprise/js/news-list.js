@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
   const sidebar = document.querySelector('#sidebar');
   const openIcon = document.querySelector('#sidebar-open');
   const closeIcon = document.querySelector('#sidebar-close');
@@ -19,9 +19,11 @@ document.addEventListener('DOMContentLoaded', function () {
   function setData(data) {
     let list = [];
     if (data.length) {
-      list = data.map((value) => { return new News(value, { type: 0 }); });
+      list = data.map((value) => { return new News(value, { type: 1 }); });
+      const min = Math.min(list.length, 8)
+
       const newsContent = document.querySelector('.news-content');
-      for (let i = 0; i < list.length; ++i) {
+      for (let i = 0; i < min; ++i) {
         newsContent.appendChild(list[i].render());
       }
     }

@@ -1,5 +1,4 @@
 function networkModule() {
-
   function setRequestLister(resolve, reject, xhr) {
     return function requestListener() {
       if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
@@ -8,7 +7,6 @@ function networkModule() {
       }
     }
   }
-
 
   function run() {
     const promise = new Promise((resolve, reject) => {
@@ -27,21 +25,4 @@ function networkModule() {
   };
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  const network = networkModule();
-
-  function setData(data) {
-    let list = [];
-    if (data.length) {
-      list = data.map((value) => { return new News(value); });
-
-      const newsContent = document.querySelector('.news-content');
-      for (let i = 0; i < list.length; ++i) {
-        newsContent.appendChild(list[i].render());
-      }
-    }
-    console.log(data);
-  }
-
-  network.run().then(setData);
-});
+window.networkModule = networkModule();
