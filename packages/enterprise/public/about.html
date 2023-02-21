@@ -14,44 +14,46 @@
 </head>
 <body>
 <div class="min-h-full flex flex-col">
-<header class="navbar">
-  <div class="top-0 w-full z-10">
-    <div class="flex justify-between flex-row items-center flex-auto pl-12 py-8 slider-header">
-      <div class="flex flex-row items-center">
-        <img
-          class="w-12 h-12 md:w-9 md:h-9"
-          src="../media/img.png"
-          alt="logo"
-        />
-        <span class="text-white font-bold header-title">企业站</span>
-      </div>
-      <div class="hidden flex-row items-center md:flex">
-        <a href="./index.html" class="text-white text-sm header-link">首页</a>
-        <a href="./news-list.html" class="text-white text-sm header-link">新闻页列表</a>
-        <a href="./about.html" class="text-white text-sm header-link header-link-active">关于我们</a>
-      </div>
-      <div class="flex items-center md:hidden">
-        <img
-          class="content-image"
-          src="../media/content.png" />
+  <header class="navbar">
+    <div class="top-0 w-full z-10">
+      <div class="flex justify-between flex-row items-center flex-auto pl-5 pt-5 py-5 md:pl-12 md:pt-8 md:py-8 slider-header">
+        <div class="flex flex-row items-center">
+          <img
+            class="w-6 h-6 md:w-9 md:h-9"
+            src="../media/img.png"
+            alt="logo"
+          />
+          <span class="text-white font-bold header-title">企业站</span>
+        </div>
+        <div class="hidden flex-row items-center md:flex">
+          <a href="./index.html" class="text-white text-sm header-link">首页</a>
+          <a href="./news-list.html" class="text-white text-sm header-link header-link-active">新闻页列表</a>
+          <a href="./about.html" class="text-white text-sm header-link">关于我们</a>
+        </div>
+
+        <div class="flex items-center md:hidden" id="sidebar-open">
+          <img
+            alt="打开菜单"
+            class="content-image"
+            src="../media/content.png" />
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
 
 <section class="relative pb-4">
   <div class="absolute top-8 z-0 news-list-float">
     <p class="whitespace-nowrap break-keep">About us</p>
   </div>
   <div class="relative flex flex-1 flex-col items-center justify-center z-10 news-list-title">
-    <p class="text-black text-5xl">关于我们</p>
-    <div class="w-32 h-1.5 mt-8 section-title-underline"></div>
+    <p class="text-black text-2xl md:text-5xl">关于我们</p>
+    <div class="w-16 md:w-32 h-0.5 md:h-1.5 mt-4 md:mt-8 section-title-underline"></div>
   </div>
   <div class="relative flex justify-center">
-    <div class="relative flex flex-row items-center about-content">
+    <div class="relative flex flex-col md:flex-row items-center about-content">
       <div id="map"></div>
-      <div class="ml-9">
-        <p class="text-2xl leading-7 font-bold mb-6">一家专注系统高端定制开发的公司</p>
+      <div class="px-4 md:pl-0 md:ml-9">
+        <p class="text-lg md:text-2xl md:leading-7 font-bold mb-3 md:mb-6">一家专注系统高端定制开发的公司</p>
         <p>互联网指的是是网络与网络之间所串连成的庞大网络，这些网络以一组通用的协议相连，形成逻辑上的单一巨大国际网络。</p>
         <p>互联网始于1969年美国的阿帕网。这种将计算机网络互相联接在一起的方法可称作“网络互联”，在这基础上发展出覆盖全世界的全球性互联网络称互联网，即是互相连接一起的网络结构。</p>
         <p>我们出色的专业开发团队扎实的技术支持，优质高效的服务意识和丰厚的资源优势，提供专业的网站建设，微信小程序，APP开发，等技术服务。成果，专注于为客户提供专业有效的互联网系统解决方案。</p>
@@ -85,30 +87,58 @@
   </div>
 </section>
 
-<footer class="mt-auto py-12 w-full">
-  <div class="flex flex-row justify-center">
+  <section class="fixed md:hidden h-full w-full top-0 left-0 z-20 overflow-hidden" id="sidebar">
+    <div class="relative top-0 left-0 h-full w-full z-20 mask"></div>
+    <div class="absolute h-full right-0 top-0 z-30 flex flex-col sidebar">
+      <div
+        class="absolute"
+        style="top: 21px;right: 21px"
+        id="sidebar-close"
+      >
+        <img
+          class="sidebar-close"
+          src="../media/close.png"
+          alt="close"
+        />
+      </div>
+      <a class="text-white sidebar-item" href="./index.html">
+        首页
+      </a>
+      <a class="text-white sidebar-item" href="./news-list.html">
+        新闻列表页
+      </a>
+      <a class="text-white sidebar-item border-b-0" href="./about.html">
+        关于我们
+      </a>
+    </div>
+  </section>
+  <footer class="px-16 md:px-0 pt-8 md:pt-12 pb-12">
+    <div class="flex flex-col md:flex-row justify-center">
       <span class="text-white footer-text">
         地址：中国山东省青岛市市南区某某中路20号
       </span>
-    <span class="text-white footer-text">
+      <span class="text-white footer-text">
         邮箱：1370XXX171@qq.com
       </span>
-    <span class="text-white footer-text">
+      <span class="text-white footer-text">
         电话：0591-88888888
       </span>
-  </div>
-  <div class="flex flex-row justify-center items-center mt-12">
-    <img
-      class="qrcode"
-      src="../media/qrcode.png"
-      alt="QrCode"
-    />
-    <p class="ml-3 text-white">
-      Copyright © 2009 - 2022 Cld , All Rights Reserved 某某网络科技有限公司 版权所有  陕ICP备xxxxxxx号
-    </p>
-  </div>
-</footer>
+    </div>
+    <div class="flex flex-row justify-center items-center mt-12">
+      <img
+        class="qrcode"
+        src="../media/qrcode.png"
+        alt="QrCode"
+      />
+      <p class="ml-3 text-white">
+        Copyright © 2009 - 2022 Cld , All Rights Reserved 某某网络科技有限公司 版权所有  陕ICP备xxxxxxx号
+      </p>
+    </div>
+  </footer>
 </div>
-<script src="../js/map.js"></script>
+<script src="../js/utils.js" type="application/javascript"></script>
+<script src="../js/map.js" type="application/javascript"></script>
+<script src="../js/sidebar.js" type="application/javascript"></script>
+<script src="../js/about.js" type="application/javascript"></script>
 </body>
 </html>

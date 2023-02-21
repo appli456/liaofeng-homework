@@ -3,7 +3,7 @@ class News {
   constructor(obj, opt) {
     const type = opt && opt.type ? opt.type : 0;
     this.element = document.createElement('a');
-    this.element.href = './news-detail.html';
+    this.element.href = `./news-detail.html?id=${obj.id}`;
     const container = document.createElement('div');
     container.className = 'flex flex-1 flex-col items-start news-card';
 

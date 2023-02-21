@@ -330,18 +330,16 @@ footer {
 }
 
 .detail-content {
-  padding-left: 9%;
-  padding-right: 9%;
+  padding: 0;
 }
 
 .detail-header-image {
   width: 100%;
-  height: 660px;
+  height: 240px;
 }
 
 .detail-title {
-  margin-top: 54px;
-  margin-bottom: 32px;
+  margin: 27px 38px 16px;
 }
 
 .detail-subtitle {
@@ -350,6 +348,10 @@ footer {
 
 .content-section {
   color: #353535
+}
+
+.content-text {
+  line-height: 24px;
 }
 
 .content-text::before {
@@ -424,8 +426,8 @@ footer {
 }
 
 #map {
-  width: 750px;
-  height: 309px;
+  width: 100%;
+  height: 240px;
 }
 
 @media all and (min-width: 768px) {
@@ -549,5 +551,24 @@ footer {
   }
   .news-list-title {
     padding-top: 118px;
+  }
+
+  .detail-content {
+    padding-left: 9%;
+    padding-right: 9%;
+  }
+  .detail-header-image {
+    height: 660px;
+  }
+  .detail-title {
+    margin: 54px 0 32px;
+  }
+  .content-text {
+    line-height: 28px;
+  }
+
+  #map {
+    width: 750px;
+    height: 309px;
   }
 }

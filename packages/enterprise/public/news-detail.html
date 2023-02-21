@@ -9,10 +9,10 @@
 <body>
 <header class="navbar">
   <div class="top-0 w-full z-10">
-    <div class="flex justify-between flex-row items-center flex-auto pl-12 py-8 slider-header">
+    <div class="flex justify-between flex-row items-center flex-auto pl-5 pt-5 py-5 md:pl-12 md:pt-8 md:py-8 slider-header">
       <div class="flex flex-row items-center">
         <img
-          class="w-12 h-12 md:w-9 md:h-9"
+          class="w-6 h-6 md:w-9 md:h-9"
           src="../media/img.png"
           alt="logo"
         />
@@ -23,8 +23,10 @@
         <a href="./news-list.html" class="text-white text-sm header-link header-link-active">新闻页列表</a>
         <a href="./about.html" class="text-white text-sm header-link">关于我们</a>
       </div>
-      <div class="flex items-center md:hidden">
+
+      <div class="flex items-center md:hidden" id="sidebar-open">
         <img
+          alt="打开菜单"
           class="content-image"
           src="../media/content.png" />
       </div>
@@ -37,88 +39,43 @@
     <p class="whitespace-nowrap break-keep">News Details page</p>
   </div>
   <div class="relative flex flex-1 flex-col items-center justify-center z-10 news-list-title">
-    <p class="text-black text-5xl">新闻详情页</p>
-    <div class="w-32 h-1.5 mt-8 section-title-underline"></div>
+    <p class="text-black text-2xl md:text-5xl">新闻详情页</p>
+    <div class="w-16 md:w-32 h-0.5 md:h-1.5 mt-4 md:mt-8 section-title-underline"></div>
   </div>
 
-  <div class="detail-content">
-    <div
-      class="bg-center bg-cover bg-no-repeat bg-origin-content detail-header-image"
-      style="background-image: url('https://s3-alpha-sig.figma.com/img/0707/8a50/9cce605d9bcfbedd2fcae35c275435b4?Expires=1677456000&Signature=XoDE9lSSmJPw9mJvzXy8ni1ddg-v9bMdH2ykZFJBjSFfaglau13VCh9rYkIXylT5gabfBn1nBDRorvzSqNKlPNVP-yT2PqSnroM1m-M3d9eghYwyGQPoSQ53-KyfVJfjfpWNoC9MsIShwxxk2AVDzR7hZlJjTUs7utINvn2dYKztKOXTqLKiHRnb3KWYOVa5fORI4aXmZeSlhNRhq~bWw9fnqj7ahhi6rXD7DLEU3u8MVT~cQ679SH15pvnZACTiQmGZrur~GLRpK9tmpXcUb9P~v8QQa6n1sxVQZ6jBUQyMDQTNe6EtyXMclcExoIEadB8ykhlMKRWIOl2bJCYg7A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4')"
-    >
-    </div>
+  <div id="detail">
 
-    <div class="flex flex-1 items-center flex-col">
-      <p class="text-center text-4xl leading-7 detail-title">把小我融入大我，立志作出我们这一代人的历史贡献</p>
-      <p class="text-center text-xl leading-7 detail-subtitle">2022年05月24日 11:35　来源：人民日报</p>
-    </div>
-
-    <div class="flex flex-1 flex-col mt-8">
-      <p class="font-bold content-section">
-        把小我融入大我，立志作出我们这一代人的历史贡献(践行嘱托十年间)
-      </p>
-      <p class="content-text">
-        2019年1月17日，习近平总书记来到天津南开大学考察调研。在元素有机化学国家重点实验室，总书记勉励师生们把学习奋斗的具体目标同民族复兴的伟大目标结合起来，把小我融入大我，立志作出我们这一代人的历史贡献。
-        正是总书记的谆谆教诲，让南开大学化学学院有机化学专业博士研究生吴雄，坚定了攻读博士学位的信心。3年来，吴雄心无旁骛地投身科研，“作为一名新时代青年，能够为国家作出力所能及的贡献，就是无上荣光”。
-        习近平总书记来到南开大学当天，广场上挤满了学生，大家高呼“总书记好”“总书记辛苦”，齐声高喊“爱我中华、振兴中华”，还唱起《我和我的祖国》。
-        在南开大学，习近平总书记指出，爱国主义是中华民族的民族心、民族魂，培养社会主义建设者和接班人，首先要培养学生的爱国情怀。高校党组织要把抓好学校党建工作和思想政治工作作为办学治校的基本功。
-      </p>
-      <p class="content-text">牢记总书记嘱托，2021年9月7日，在2021级新生开学典礼上，中国工程院院士、南开大学校长曹雪涛为新生讲授的“开学第一课”，主题就是“爱国”。</p>
-      <p class="content-text">“你是中国人吗？”“是！”“你爱中国吗？”“爱！”“你愿意中国好吗？”“愿意！愿祖国繁荣富强！”……1935年，在南开大学开学典礼上，张伯苓校长面对全体南开师生发出著名的“爱国三问”。86年后，曹雪涛带领全体新生一起重温“爱国三问”，发出新时代南开人爱国报国最强音。</p>
-      <p class="content-text">说，更要做。由曹雪涛领衔开设、12位两院院士共同讲授的通识选修课《医药前沿与挑战》，近年来广受师生赞誉。“通过名师大家的精神与风范感召和引领青年学子，进一步涵养他们的爱国报国情怀，这是新时代思政课程的生动实践。”曹雪涛说。</p>
-      <p class="content-text">不只是南开大学。近年来，天津加强党对学校工作的全面领导，各高校党委落实立德树人根本任务，着力构建思政工作大格局。</p>
-      <p class="content-text">集中建设习近平新时代中国特色社会主义思想示范课100节；成立天津市学校爱国主义教育联盟，组织编写十余本爱国主义思政读物；构建大中小幼一体化思想政治教育体系，实现高校专职思政课教师、辅导员“双配齐”；推出10节思政品牌课、100节思政示范课、1000节思政优质课；引导每位思政课教师都有一节“叫好又叫座”“感动又触动”的思政金课……在习近平新时代中国特色社会主义思想哺育下，爱国主义正在成为天津青少年的坚定信念、精神力量和自觉行动。</p>
-    </div>
-    <div class="mb-8">
-      <p class="content-text">本报记者 武少民 【编辑:孙静波】</p>
-    </div>
-
-    <div
-      class="bg-center bg-cover bg-no-repeat bg-origin-content detail-header-image"
-      style="background-image: url('https://s3-alpha-sig.figma.com/img/5eba/6629/bd7903984e89ba99f6f21cc58a73e09f?Expires=1677456000&Signature=dU70~4DXuouiOYJWje9irtJR4Stq-6H5ZvhN8PdLKUQ~Sh1u1ueHAu7dNn7lE7xtfQQcZaBKo5dM3aJ8B0vt0C1rG7j0hhL5zHR3B0F4B-NUrLekLcMBtp-w1mYoVZz66onMkc1A6P3xov5iZQHhdTxfQzLwSFTIAT3ucmDxctXFll7zUi5WlS9BXM1W8SVqRKgexGLmv~ZycS~69-FpUQ~39HpxH3Y3dNLQkrbcUGXXy8w~5o2pGyCNOxiHJDUjmhljwYHHC5OHEoPxmUNeNZnTHFmwYnqBX~OsDBgeVmoSR4UuOgY4PyIEBXfHpJFID-lEe4kmAWvVg3Q1Mi0ywg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4')"
-    >
-    </div>
-
-    <div class="flex flex-1 flex-col mt-8">
-      <p class="font-bold content-section">把小我融入大我，立志作出我们这一代人的历史贡献(践行嘱托十年间)</p>
-      <p class="content-text">
-        2019年1月17日，习近平总书记来到天津南开大学考察调研。在元素有机化学国家重点实验室，总书记勉励师生们把学习奋斗的具体目标同民族复兴的伟大目标结合起来，把小我融入大我，立志作出我们这一代人的历史贡献。
-        正是总书记的谆谆教诲，让南开大学化学学院有机化学专业博士研究生吴雄，坚定了攻读博士学位的信心。3年来，吴雄心无旁骛地投身科研，“作为一名新时代青年，能够为国家作出力所能及的贡献，就是无上荣光”。
-        习近平总书记来到南开大学当天，广场上挤满了学生，大家高呼“总书记好”“总书记辛苦”，齐声高喊“爱我中华、振兴中华”，还唱起《我和我的祖国》。
-        在南开大学，习近平总书记指出，爱国主义是中华民族的民族心、民族魂，培养社会主义建设者和接班人，首先要培养学生的爱国情怀。高校党组织要把抓好学校党建工作和思想政治工作作为办学治校的基本功。
-      </p>
-      <p class="content-text">牢记总书记嘱托，2021年9月7日，在2021级新生开学典礼上，中国工程院院士、南开大学校长曹雪涛为新生讲授的“开学第一课”，主题就是“爱国”。</p>
-      <p class="content-text">“你是中国人吗？”“是！”“你爱中国吗？”“爱！”“你愿意中国好吗？”“愿意！愿祖国繁荣富强！”……1935年，在南开大学开学典礼上，张伯苓校长面对全体南开师生发出著名的“爱国三问”。86年后，曹雪涛带领全体新生一起重温“爱国三问”，发出新时代南开人爱国报国最强音。</p>
-      <p class="content-text">说，更要做。由曹雪涛领衔开设、12位两院院士共同讲授的通识选修课《医药前沿与挑战》，近年来广受师生赞誉。“通过名师大家的精神与风范感召和引领青年学子，进一步涵养他们的爱国报国情怀，这是新时代思政课程的生动实践。”曹雪涛说。</p>
-      <p class="content-text">不只是南开大学。近年来，天津加强党对学校工作的全面领导，各高校党委落实立德树人根本任务，着力构建思政工作大格局。</p>
-      <p class="content-text">集中建设习近平新时代中国特色社会主义思想示范课100节；成立天津市学校爱国主义教育联盟，组织编写十余本爱国主义思政读物；构建大中小幼一体化思想政治教育体系，实现高校专职思政课教师、辅导员“双配齐”；推出10节思政品牌课、100节思政示范课、1000节思政优质课；引导每位思政课教师都有一节“叫好又叫座”“感动又触动”的思政金课……在习近平新时代中国特色社会主义思想哺育下，爱国主义正在成为天津青少年的坚定信念、精神力量和自觉行动。</p>
-    </div>
-    <div>
-      <p class="content-text">本报记者 武少民 【编辑:孙静波】</p>
-    </div>
-
-    <div class="flex flex-1 flex-col mt-8">
-      <p class="font-bold content-section">把小我融入大我，立志作出我们这一代人的历史贡献(践行嘱托十年间)</p>
-      <p class="content-text">
-        2019年1月17日，习近平总书记来到天津南开大学考察调研。在元素有机化学国家重点实验室，总书记勉励师生们把学习奋斗的具体目标同民族复兴的伟大目标结合起来，把小我融入大我，立志作出我们这一代人的历史贡献。
-        正是总书记的谆谆教诲，让南开大学化学学院有机化学专业博士研究生吴雄，坚定了攻读博士学位的信心。3年来，吴雄心无旁骛地投身科研，“作为一名新时代青年，能够为国家作出力所能及的贡献，就是无上荣光”。
-        习近平总书记来到南开大学当天，广场上挤满了学生，大家高呼“总书记好”“总书记辛苦”，齐声高喊“爱我中华、振兴中华”，还唱起《我和我的祖国》。
-        在南开大学，习近平总书记指出，爱国主义是中华民族的民族心、民族魂，培养社会主义建设者和接班人，首先要培养学生的爱国情怀。高校党组织要把抓好学校党建工作和思想政治工作作为办学治校的基本功。
-      </p>
-      <p class="content-text">牢记总书记嘱托，2021年9月7日，在2021级新生开学典礼上，中国工程院院士、南开大学校长曹雪涛为新生讲授的“开学第一课”，主题就是“爱国”。</p>
-      <p class="content-text">“你是中国人吗？”“是！”“你爱中国吗？”“爱！”“你愿意中国好吗？”“愿意！愿祖国繁荣富强！”……1935年，在南开大学开学典礼上，张伯苓校长面对全体南开师生发出著名的“爱国三问”。86年后，曹雪涛带领全体新生一起重温“爱国三问”，发出新时代南开人爱国报国最强音。</p>
-      <p class="content-text">说，更要做。由曹雪涛领衔开设、12位两院院士共同讲授的通识选修课《医药前沿与挑战》，近年来广受师生赞誉。“通过名师大家的精神与风范感召和引领青年学子，进一步涵养他们的爱国报国情怀，这是新时代思政课程的生动实践。”曹雪涛说。</p>
-      <p class="content-text">不只是南开大学。近年来，天津加强党对学校工作的全面领导，各高校党委落实立德树人根本任务，着力构建思政工作大格局。</p>
-      <p class="content-text">集中建设习近平新时代中国特色社会主义思想示范课100节；成立天津市学校爱国主义教育联盟，组织编写十余本爱国主义思政读物；构建大中小幼一体化思想政治教育体系，实现高校专职思政课教师、辅导员“双配齐”；推出10节思政品牌课、100节思政示范课、1000节思政优质课；引导每位思政课教师都有一节“叫好又叫座”“感动又触动”的思政金课……在习近平新时代中国特色社会主义思想哺育下，爱国主义正在成为天津青少年的坚定信念、精神力量和自觉行动。</p>
-    </div>
-    <div class="mb-8">
-      <p class="content-text">本报记者 武少民 【编辑:孙静波】</p>
-    </div>
   </div>
 </section>
 
-<footer class="py-12">
-  <div class="flex flex-row justify-center">
+<section class="fixed md:hidden h-full w-full top-0 left-0 z-20 overflow-hidden" id="sidebar">
+  <div class="relative top-0 left-0 h-full w-full z-20 mask"></div>
+  <div class="absolute h-full right-0 top-0 z-30 flex flex-col sidebar">
+    <div
+      class="absolute"
+      style="top: 21px;right: 21px"
+      id="sidebar-close"
+    >
+      <img
+        class="sidebar-close"
+        src="../media/close.png"
+        alt="close"
+      />
+    </div>
+    <a class="text-white sidebar-item" href="./index.html">
+      首页
+    </a>
+    <a class="text-white sidebar-item" href="./news-list.html">
+      新闻列表页
+    </a>
+    <a class="text-white sidebar-item border-b-0" href="./about.html">
+      关于我们
+    </a>
+  </div>
+</section>
+
+<footer class="px-16 md:px-0 pt-8 md:pt-12 pb-12">
+  <div class="flex flex-col md:flex-row justify-center">
       <span class="text-white footer-text">
         地址：中国山东省青岛市市南区某某中路20号
       </span>
@@ -140,5 +97,10 @@
     </p>
   </div>
 </footer>
+
+<script src="../js/component/Article.js" type="application/javascript"></script>
+<script src="../js/utils.js" type="application/javascript"></script>
+<script src="../js/network.js" type="application/javascript"></script>
+<script src="../js/news-detail.js" type="application/javascript"></script>
 </body>
 </html>

@@ -29,10 +29,35 @@ function utils() {
     return element;
   }
 
+  function getQuery() {
+    const query = location.search.replace('?', '').split('&');
+    const obj = {};
+
+    for (let i = 0; i < query.length; ++i) {
+      const item = query[i].split('=');
+      if (item.length === 2) {
+        obj[item[0]] = item[1];
+      }
+    }
+
+    return obj;
+  }
+
+  function formatDate(date) {
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const hour = date.getHours();
+    const minutes = date.getMinutes();
+
+    return `${year}年${month}月${day}日 ${hour}:${minutes}`;
+  }
 
   return {
     addClass: addClass,
     removeClass: removeClass,
+    getQuery: getQuery,
+    formatDate: formatDate,
   }
 }
 
