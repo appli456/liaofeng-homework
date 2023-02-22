@@ -1,14 +1,14 @@
 function animation() {
-  const SliderActiveRegex = /active/;
   let animateID = null;
+  const sliderItems = document.querySelectorAll('.slider-item');
+  const circleList = document.querySelectorAll('.slider-circle');
 
-  function sliderFadeIn() {
-    const sliderItems = document.querySelectorAll('.slider-item');
+  function getNextIndex() {
     let selectedIndex = -1;
     let nextIndex = -1;
     for (let i = 0; i < sliderItems.length; ++i) {
       const item = sliderItems[i];
-      if (SliderActiveRegex.test(item.className)) {
+      if (window.utils.hasClass(item, 'active')) {
         selectedIndex = i;
 
         if (selectedIndex === sliderItems.length - 1) {
@@ -21,30 +21,17 @@ function animation() {
       }
     }
 
-    if (selectedIndex !== -1) {
-      sliderItems[selectedIndex].className = sliderItems[selectedIndex].className.replace(' active', '');
-      sliderItems[nextIndex].className = sliderItems[nextIndex].className + ' active'
-    }
-    return nextIndex;
+    return [nextIndex, selectedIndex];
   }
 
   function runNextSlider() {
     const item = document.querySelector('.selected-slider-circle');
-    const list = document.querySelectorAll('.slider-circle');
     const right = item.querySelector('.slider-circle-progress-right');
     const left = item.querySelector('.slider-circle-progress-left');
     right.style.cssText = 'transform: rotate(-135deg)';
     left.style.cssText = 'transform: rotate(-135deg)';
-    const nextIndex = sliderFadeIn();
-    for (let i = 0; i < list.length; ++i) {
-      const className = list[i].className;
-      if (i === nextIndex) {
-        list[i].className += ' selected-slider-circle';
-      }
-      if (className.indexOf('selected-slider-circle') >= 0) {
-        list[i].className = className.replace(' selected-slider-circle', '');
-      }
-    }
+    const [nextIndex, selectedIndex] = getNextIndex();
+    change(nextIndex, selectedIndex);
   }
 
   function sliderProgressAnimation() {
@@ -79,28 +66,39 @@ function animation() {
     animateID = window.requestAnimationFrame(sliderProgressAnimation());
   }
 
+  function change(nextIndex, selectedIndex) {
+    window.utils.removeClass(sliderItems[selectedIndex], 'active');
+    window.utils.addClass(sliderItems[nextIndex], 'active');
+    for (let i = 0; i < circleList.length; ++i) {
+      const className = circleList[i].className;
+      if (i === nextIndex) {
+        window.utils.addClass(circleList[i], 'selected-slider-circle');
+      }
+      if (className.indexOf('selected-slider-circle') >= 0) {
+        window.utils.removeClass(circleList[i], 'selected-slider-circle')
+      }
+    }
+  }
+
+  function init() {
+    circleList.forEach((item, index) => {
+      item.addEventListener('click', () => {
+        const [ nextIndex, selectedIndex ] = getNextIndex();
+        if (index === selectedIndex) {
+          return;
+        }
+
+        stop();
+        change(index, selectedIndex)
+        run();
+      })
+    });
+  }
+
   return {
-    stop,
-    run,
-    runNextSlider,
+    run: run,
+    init: init,
   }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  const animationFunction = animation();
-  const circleItems = document.querySelectorAll('.slider-circle');
-  circleItems.forEach((item) => {
-    item.addEventListener('click', () => {
-      if (item.className.indexOf('selected-slider-circle') >= 0) {
-        return;
-      }
-
-      animationFunction.stop();
-      animationFunction.runNextSlider();
-      animationFunction.run();
-    })
-  });
-
-  animationFunction.run();
-});
-
+window.animationModule = animation();

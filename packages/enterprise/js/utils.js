@@ -29,6 +29,11 @@ function utils() {
     return element;
   }
 
+  function hasClass(element, className) {
+    const classNames = element.className.split(' ');
+    return classNames.indexOf(className) > -1;
+  }
+
   function getQuery() {
     const query = location.search.replace('?', '').split('&');
     const obj = {};
@@ -53,11 +58,42 @@ function utils() {
     return `${year}年${month}月${day}日 ${hour}:${minutes}`;
   }
 
+  function throttle(func, delay) {
+    let lastTime = 0;
+
+    return function() {
+      const _this = this;
+      const args = arguments;
+      const currentTime = Date.now();
+      if(currentTime - lastTime > delay){
+        func.apply(_this, args);
+        lastTime = currentTime
+      }
+    }
+  }
+
+  function debounce(func, delay){
+    let timer;
+    return function() {
+      const _this = this;
+      const args = arguments;
+      if (timer){
+        clearTimeout(timer);
+      }
+      timer = setTimeout(() => {
+        func.apply(_this, args);
+      }, delay)
+    }
+  }
+
   return {
     addClass: addClass,
     removeClass: removeClass,
+    hasClass: hasClass,
     getQuery: getQuery,
     formatDate: formatDate,
+    throttle: throttle,
+    debounce: debounce,
   }
 }
 

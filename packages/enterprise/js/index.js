@@ -1,20 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const sidebar = document.querySelector('#sidebar');
-  const openIcon = document.querySelector('#sidebar-open');
-  const closeIcon = document.querySelector('#sidebar-close');
-  const mask = document.querySelector('#sidebar .mask');
-
-  openIcon.addEventListener('click', function() {
-    window.utils.addClass(sidebar, 'active');
-  });
-
-  closeIcon.addEventListener('click', function() {
-    window.utils.removeClass(sidebar, 'active');
-  });
-
-  mask.addEventListener('click', function () {
-    window.utils.removeClass(sidebar, 'active');
-  });
+  window.sidebarModule.init();
+  window.animationModule.init();
 
   function setData(data) {
     let list = [];
@@ -26,8 +12,12 @@ document.addEventListener('DOMContentLoaded', function () {
       for (let i = 0; i < min; ++i) {
         newsContent.appendChild(list[i].render());
       }
+
+      window.enterAnimationModule.update();
     }
   }
 
+  window.enterAnimationModule.init();
+  window.animationModule.run();
   window.networkModule.run().then(setData);
 });

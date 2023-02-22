@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
   <title>企业站——首页</title>
   <link rel="stylesheet" href="../styles/output.css">
-  <link rel="prefetch" href="../js/index.js">
 </head>
 <body>
   <section class="slider">
@@ -105,9 +104,18 @@
     </div>
     <div class="flex flex-col justify-end service-background">
       <div class="flex flex-auto flex-col md:flex-row justify-between service-line-1">
-        <div class="flex flex-col flex-1 service-content">
-          <p class="text-2xl md:text-5xl break-keep whitespace-nowrap">服务范围</p>
-          <p class="text-sm md:text-2xl service-content-text">
+        <div
+          class="flex flex-col flex-1 service-content"
+          data-enter-animation="left-translate"
+        >
+          <p
+            class="text-2xl md:text-5xl break-keep whitespace-nowrap"
+          >
+            服务范围
+          </p>
+          <p
+            class="text-sm md:text-2xl service-content-text"
+          >
             依托百度政务混合云，汇聚城市管理及公安等政务领域的自有数据及互联网公开数据，基于百度大数据多年积累的行业模型及实战经验，提供从数据整合治理到分析挖掘的一站式大数据解决方案，助力智慧政务新时代。
           </p>
           <p class="text-sm md:text-2xl service-content-text">
@@ -116,18 +124,22 @@
         </div>
         <div class="flex flex-row flex-1 items-end justify-end">
           <div
+            data-enter-animation="fade"
             class="w-20 h-20 md:w-64 md:h-64 mr-3 md:mr-8 bg-no-repeat bg-center bg-cover bg-origin-content image-1"
           ></div>
           <div
+            data-enter-animation="fade"
             class="bg-no-repeat bg-center bg-cover bg-origin-content image-2"
           ></div>
         </div>
       </div>
       <div class="flex flex-row items-start justify-between md:justify-end mt-3 md:mt-0">
         <div
+          data-enter-animation="fade"
           class="md:mr-8 bg-no-repeat bg-cover bg-center bg-origin-content image-3"
         ></div>
         <div
+          data-enter-animation="fade"
           class="bg-no-repeat bg-cover bg-center bg-origin-content image-4"
         ></div>
       </div>
@@ -136,7 +148,9 @@
 
   <section class="relative bg-cover culture hidden md:block">
     <div class="box-border culture-mask">
-      <div class="flex flex-1 flex-col items-center justify-center">
+      <div
+        class="flex flex-1 flex-col items-center justify-center"
+      >
         <p class="text-white text-5xl">企业文化</p>
         <div class="w-32 h-1.5 mt-8 section-title-underline"></div>
       </div>
@@ -155,39 +169,85 @@
     <div class="absolute z-0 introduce-title">
       <p>Team to introduce</p>
     </div>
-    <div class="relative flex flex-1 flex-col items-center justify-center z-10">
+    <div
+      class="relative flex flex-1 flex-col items-center justify-center z-10"
+      data-enter-animation="right-translate"
+    >
       <p class="text-black text-2xl md:text-5xl">团队介绍</p>
       <div class="w-16 md:w-32 h-0.5 md:h-1.5 mt-4 md:mt-8 section-title-underline"></div>
     </div>
     <div class="relative flex flex-row items-center flex-1 z-10 grid grid-cols-1 md:grid-cols-3">
-      <div class="flex-1 flex flex-col items-center bg-origin-content bg-center bg-no-repeat bg-cover team-1">
-        <p class="text-white text-5xl team-title">Jon Smith</p>
-        <p class="text-white text-base md:text-xl">特级教师，从事教育工作10年</p>
-        <div class="flex flex-row items-center justify-center team-information">
-          <img
-            class="w-6 h-6"
-            src="../media/red_right_arrow.png"
-          />
-          <p class="text-white text-sm md:text-xl team-information-text">More information</p>
-        </div>
-      </div>
-      <div class="flex flex-1 flex-col items-center bg-origin-content bg-center bg-no-repeat bg-cover team-2">
-        <p class="text-white text-5xl team-title">Merri Bond</p>
-        <p class="text-white text-base md:text-xl">特级教师，从事教育工作10年</p>
-        <div class="flex flex-row items-center justify-center team-information">
-          <img
-            class="w-6 h-6"
-            src="../media/red_right_arrow.png"
-          />
-          <p class="text-white text-sm md:text-xl team-information-text">More information</p>
-        </div>
-      </div>
-      <div class="flex flex-1 flex-col items-center bg-origin-content bg-center bg-no-repeat bg-cover team-3">
-        <p class="text-white text-5xl team-title">Samuel Fredman</p>
-        <p class="text-white text-base md:text-xl">
+      <div
+        class="flex-1 flex flex-col items-center bg-origin-content bg-center bg-no-repeat bg-cover team-1"
+      >
+        <p
+          class="text-white text-5xl team-title"
+          data-enter-animation="fade"
+        >
+          Jon Smith
+        </p>
+        <p
+          class="text-white text-base md:text-xl"
+          data-enter-animation="fade"
+        >
           特级教师，从事教育工作10年
         </p>
-        <div class="flex flex-row items-center justify-center team-information">
+        <div
+          class="flex flex-row items-center justify-center team-information"
+          data-enter-animation="fade"
+        >
+          <img
+            class="w-6 h-6"
+            src="../media/red_right_arrow.png"
+          />
+          <p class="text-white text-sm md:text-xl team-information-text">More information</p>
+        </div>
+      </div>
+      <div
+        class="flex flex-1 flex-col items-center bg-origin-content bg-center bg-no-repeat bg-cover team-2"
+      >
+        <p
+          class="text-white text-5xl team-title"
+          data-enter-animation="fade"
+        >
+          Merri Bond
+        </p>
+        <p
+          class="text-white text-base md:text-xl"
+          data-enter-animation="fade"
+        >
+          特级教师，从事教育工作10年
+        </p>
+        <div
+          class="flex flex-row items-center justify-center team-information"
+          data-enter-animation="fade"
+        >
+          <img
+            class="w-6 h-6"
+            src="../media/red_right_arrow.png"
+          />
+          <p class="text-white text-sm md:text-xl team-information-text">More information</p>
+        </div>
+      </div>
+      <div
+        class="flex flex-1 flex-col items-center bg-origin-content bg-center bg-no-repeat bg-cover team-3"
+      >
+        <p
+          class="text-white text-5xl team-title"
+          data-enter-animation="fade"
+        >
+          Samuel Fredman
+        </p>
+        <p
+          class="text-white text-base md:text-xl"
+          data-enter-animation="fade"
+        >
+          特级教师，从事教育工作10年
+        </p>
+        <div
+          class="flex flex-row items-center justify-center team-information"
+          data-enter-animation="fade"
+        >
           <img
             class="w-6 h-6"
             src="../media/red_right_arrow.png"
@@ -203,7 +263,10 @@
       <p>news and trends</p>
     </div>
 
-    <div class="relative z-10 flex flex-1 flex-col items-center justify-center" style="padding-top: 49px">
+    <div
+      class="relative z-10 flex flex-1 flex-col items-center justify-center" style="padding-top: 49px"
+      data-enter-animation="right-translate"
+    >
       <p class="text-white text-2xl md:text-5xl">新闻动态</p>
       <div class="w-16 md:w-32 h-0.5 md:h-1.5 mt-4 md:mt-8 section-title-underline"></div>
     </div>
@@ -261,13 +324,11 @@
       </p>
     </div>
   </footer>
-  <script
-    src="../js/animation.js"
-    type="application/javascript"
-  >
-  </script>
   <script src="../js/component/News.js"></script>
   <script src="../js/utils.js" type="application/javascript"></script>
+  <script src="../js/animation.js" type="application/javascript"></script>
+  <script src="../js/enter-animations.js" type="application/javascript"></script>
+  <script src="../js/sidebar.js" type="application/javascript"></script>
   <script src="../js/network.js" type="application/javascript"></script>
   <script src="../js/index.js" type="application/javascript"></script>
 </body>
