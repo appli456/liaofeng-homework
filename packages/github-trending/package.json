@@ -2,8 +2,20 @@
   "name": "github-trending",
   "version": "1.0.0",
   "scripts": {
-    "start": ""
+    "start": "vite",
+    "build": "vite build"
   },
   "dependencies": {
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "antd": "^5.2.2",
+    "axios": "^1.3.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.34.0",
+    "prettier": "^2.8.4",
+    "sass": "^1.58.3"
   }
 }

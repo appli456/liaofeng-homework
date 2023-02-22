@@ -33,11 +33,11 @@ function buildPersonalProfile() {
   if (!fs.existsSync(buildPersonalProfile)) {
     fs.mkdirSync(buildPersonalProfile);
   }
-  const css = path.join(pathConfig.personalProfile, 'index.css');
+  const css = path.join(pathConfig.personalProfile, 'index.scss');
   const html = path.join(pathConfig.personalProfile, 'index.html');
   const img = path.join(pathConfig.personalProfile, 'img.png');
 
-  fs.copyFileSync(css, path.join(buildPersonalProfile, 'index.css'));
+  fs.copyFileSync(css, path.join(buildPersonalProfile, 'index.scss'));
   fs.copyFileSync(html, path.join(buildPersonalProfile, 'index.html'));
   fs.copyFileSync(img, path.join(buildPersonalProfile, 'img.png'));
 }
