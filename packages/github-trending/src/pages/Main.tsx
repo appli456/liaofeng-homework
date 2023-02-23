@@ -1,35 +1,37 @@
-import React, { useState, useEffect } from 'react';
-import networkProvider from '../services';
-import GithubItem from '../components/GithubItem';
+import React, {useState} from 'react';
+import Popular from './../components/Popular';
+import Battle from "../components/Battle";
+import {getQuery} from "../utils";
 
 function Main() {
-  const [language, setLanguage] = useState('');
-  const [dataSource, setDataSource] = useState([]);
-  useEffect(() => {
-    networkProvider.request().then((res) => {
-      setDataSource(res.data.items);
-      console.log(res.data.items);
-    });
-  }, []);
+  const query = getQuery() || {};
+  const [ mode, setMode ] = useState(query.mode);
+
+  function onChangeMode(nextMode: string): void {
+    if (nextMode === mode) {
+      return;
+    }
+    setMode(nextMode);
+  }
+
   return (
     <React.Fragment>
-      <header></header>
-      <section
-        style={{
-          display: "grid",
-          gridTemplateColumns: 'repeat(4, minmax(0, 1fr))',
-        }}
-      >
-        {
-          dataSource.map((value: any, index) => {
-            return (
-              <GithubItem
-                item={value}
-                key={`github-item-${value.id}`}
-              />
-            )
-          })
-        }
+      <header className="relative">
+        <span
+          className={`cursor-pointer font-bold text-3xl mr-2 ${mode === 'popular' ? 'text-red-400' : ''}`}
+          onClick={() => { onChangeMode('popular') }}
+        >
+          Popular
+        </span>
+        <span
+          className={`cursor-pointer font-bold text-3xl ${mode === 'battle' ? 'text-red-400' : ''}`}
+          onClick={() => { onChangeMode('battle') }}
+        >
+          Battle
+        </span>
+      </header>
+      <section className="relative">
+        { mode == 'popular' ? <Popular /> : <Battle /> }
       </section>
     </React.Fragment>
   )
