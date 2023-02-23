@@ -10,7 +10,7 @@ function animateFrame() {
       return;
     }
     const left = parseInt($this.css('left'));
-    $this.css('left', left - parseInt($this.attr('data-speed')));
+    $this.css('left', left - parseInt($this.attr('data-speed') as string));
   });
   if (clearItem.length) {
     clearItem.forEach((v) => {

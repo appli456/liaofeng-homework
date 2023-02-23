@@ -6,11 +6,16 @@ export function getQuery(): { [key: string]: string | string[] | undefined } | n
   return urlObj.query;
 }
 
+export function setQuery(query: string) {
+  location.search = `?${query}`;
+}
+
 export function getHash(): string {
   return (location.hash).replace('#', '');
 }
 
 export function setHash(hash: string): void {
+  console.log('set');
   location.hash = `#${hash}`;
 }
 

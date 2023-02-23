@@ -1,2 +1,11 @@
 node_modules
 scripts
+.eslintrc.js
+packages/**/tailwind.config.js
+*.css
+*.scss
+*.png
+*.html
+packages/**/postcss.config.js
+packages/**/dist
+packages/enterprise

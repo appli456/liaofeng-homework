@@ -8,7 +8,7 @@ interface BarrageOption {
 
 class Barrage {
    private readonly element: JQuery<HTMLElement>;
-   id: Symbol = Symbol();
+   // id: Symbol = Symbol();
   constructor(text: string, options: BarrageOption) {
     const span = $('<span></span>');
     span.text(text)

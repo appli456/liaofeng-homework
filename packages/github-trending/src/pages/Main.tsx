@@ -1,16 +1,19 @@
 import React, {useState} from 'react';
 import Popular from './../components/Popular';
 import Battle from "../components/Battle";
-import {getQuery} from "../utils";
+import { getQuery, setHash, setQuery } from "../utils";
 
 function Main() {
   const query = getQuery() || {};
-  const [ mode, setMode ] = useState(query.mode);
+  const initMode = query.mode || 'popular';
+  const [ mode, setMode ] = useState(initMode);
 
   function onChangeMode(nextMode: string): void {
     if (nextMode === mode) {
       return;
     }
+    setHash('');
+    setQuery(`mode=${nextMode}`);
     setMode(nextMode);
   }
 

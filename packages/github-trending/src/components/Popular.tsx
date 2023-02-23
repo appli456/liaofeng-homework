@@ -20,13 +20,13 @@ function Popular() {
 
   function onSelect(nextLanguage: string) {
     setLoading(true);
-    setHash(nextLanguage);
     networkProvider.request({
       url: `${NetworkProvider.baseUrl}&q=stars:%3E1+${nextLanguage}`
     }).then((res) => {
       if (res.data.items) {
         setLanguage(nextLanguage);
         setDataSource(res.data.items);
+        setHash(nextLanguage);
       }
     }).finally(() => {
       setLoading(false);
