@@ -1,9 +1,10 @@
 import React from 'react';
 import { createRoot } from "react-dom/client";
+import Cart from './pages/cart';
 import './styles/index.scss';
 
 function App() {
-  return null;
+  return <Cart />;
 }
 
 const domNode = document.getElementById('root');
