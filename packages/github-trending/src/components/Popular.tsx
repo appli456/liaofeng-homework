@@ -3,7 +3,7 @@ import networkProvider, { NetworkProvider } from "../services";
 import GithubItem from "./GithubItem";
 import Loading from "./Loading";
 import { PopularEnum } from "../utils/consts";
-import { initialPopularLanguage, setHash } from "../utils";
+import {initialPopularLanguage, setQuery} from "../utils";
 
 function Popular() {
   const [language, setLanguage] = useState(initialPopularLanguage());
@@ -26,7 +26,7 @@ function Popular() {
       if (res.data.items) {
         setLanguage(nextLanguage);
         setDataSource(res.data.items);
-        setHash(nextLanguage);
+        setQuery(`language=${nextLanguage.toLowerCase()}`)
       }
     }).finally(() => {
       setLoading(false);

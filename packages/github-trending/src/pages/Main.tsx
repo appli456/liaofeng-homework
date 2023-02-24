@@ -1,19 +1,19 @@
 import React, {useState} from 'react';
 import Popular from './../components/Popular';
 import Battle from "../components/Battle";
-import { getQuery, setHash, setQuery } from "../utils";
+import {getHash, setHash, setQuery} from "../utils";
 
 function Main() {
-  const query = getQuery() || {};
-  const initMode = query.mode || 'popular';
+  const hash = getHash();
+  const initMode = (hash === 'popular' || hash === 'battle' || hash === 'battle-result') ? hash : 'popular';
   const [ mode, setMode ] = useState(initMode);
 
   function onChangeMode(nextMode: string): void {
     if (nextMode === mode) {
       return;
     }
-    setHash('');
-    setQuery(`mode=${nextMode}`);
+    setHash(nextMode);
+    setQuery('');
     setMode(nextMode);
   }
 
@@ -27,7 +27,7 @@ function Main() {
           Popular
         </span>
         <span
-          className={`cursor-pointer font-bold text-3xl ${mode === 'battle' ? 'text-red-400' : ''}`}
+          className={`cursor-pointer font-bold text-3xl ${(mode === 'battle' || mode === 'battle-result') ? 'text-red-400' : ''}`}
           onClick={() => { onChangeMode('battle') }}
         >
           Battle
