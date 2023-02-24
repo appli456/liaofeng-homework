@@ -55,6 +55,19 @@ function buildBarrage() {
   });
 }
 
+function buildGithubTrending() {
+  const dist = path.join(pathConfig.githubTrending, 'dist');
+  const buildGithubTrending = path.join(pathConfig.build, 'github-trending');
+
+  if (!fs.existsSync(buildGithubTrending)) {
+    fs.mkdirSync(buildGithubTrending);
+  }
+
+  exec("cd packages/github-trending && npm run build", {}, () => {
+    copyFolder(dist, buildGithubTrending).then();
+  });
+}
+
 function copyToGithubPage() {
   cp('-rf', pathConfig.build, path.join(pathConfig.appDirectory, '..', 'appli456.github.io'))
 }
@@ -66,5 +79,6 @@ if (!fs.existsSync(pathConfig.build)) {
 buildPersonalProfile();
 buildBarrage();
 buildEnterprise();
+buildGithubTrending()
 
 copyToGithubPage();

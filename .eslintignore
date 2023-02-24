@@ -9,3 +9,4 @@ packages/**/tailwind.config.js
 packages/**/postcss.config.js
 packages/**/dist
 packages/enterprise
+packages/github-trending-raw

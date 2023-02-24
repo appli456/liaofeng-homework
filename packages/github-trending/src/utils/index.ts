@@ -27,7 +27,6 @@ export function getHash(): string {
 }
 
 export function setHash(hash: string): void {
-  console.log('set');
   location.hash = `#${hash}`;
 }
 
