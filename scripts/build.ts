@@ -68,6 +68,20 @@ function buildGithubTrending() {
   });
 }
 
+function buildGithubTrendingRaw() {
+  const buildGithubTrending = path.join(pathConfig.build, 'github-trending-raw');
+
+  if (!fs.existsSync(buildGithubTrending)) {
+    fs.mkdirSync(buildGithubTrending);
+  }
+
+  const js = path.join(pathConfig.githubTrendingRaw, 'app.js');
+  const html = path.join(pathConfig.githubTrendingRaw, 'index.html');
+
+  fs.copyFileSync(js, path.join(buildGithubTrending, 'index.css'));
+  fs.copyFileSync(html, path.join(buildGithubTrending, 'index.html'));
+}
+
 function copyToGithubPage() {
   cp('-rf', pathConfig.build, path.join(pathConfig.appDirectory, '..', 'appli456.github.io'))
 }
@@ -79,6 +93,7 @@ if (!fs.existsSync(pathConfig.build)) {
 buildPersonalProfile();
 buildBarrage();
 buildEnterprise();
-buildGithubTrending()
+buildGithubTrending();
+buildGithubTrendingRaw();
 
 copyToGithubPage();

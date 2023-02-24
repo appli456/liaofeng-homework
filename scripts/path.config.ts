@@ -10,6 +10,7 @@ export default {
   personalProfile: path.join(monorepoDir, 'personal-profile'),
   enterprise: path.join(monorepoDir, 'enterprise'),
   githubTrending: path.join(monorepoDir, 'github-trending'),
+  githubTrendingRaw: path.join(monorepoDir, 'github-trending-raw'),
   cart: path.join(monorepoDir, 'cart'),
   build: buildDir,
 }
