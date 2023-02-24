@@ -1,7 +1,9 @@
-import React, {useEffect, useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
+import {notification, Spin} from "antd";
+import InfiniteScroller from 'react-infinite-scroller';
 import networkProvider, { NetworkProvider } from "../services";
 import GithubItem from "./GithubItem";
-import Loading from "./Loading";
+// import Loading from "./Loading";
 import { PopularEnum } from "../utils/consts";
 import {initialPopularLanguage, setQuery} from "../utils";
 
@@ -9,6 +11,8 @@ function Popular() {
   const [language, setLanguage] = useState(initialPopularLanguage());
   const [dataSource, setDataSource] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [page, setPage] = useState(1);
+  const [end, setEnd] = useState(false);
 
   useEffect(() => {
     networkProvider.request({ url: `${NetworkProvider.baseUrl}&q=stars:%3E1+${initialPopularLanguage()}` }).then((res) => {
@@ -19,19 +23,52 @@ function Popular() {
   }, []);
 
   function onSelect(nextLanguage: string) {
+    if (loading) {
+      return;
+    }
     setLoading(true);
     networkProvider.request({
       url: `${NetworkProvider.baseUrl}&q=stars:%3E1+${nextLanguage}`
     }).then((res) => {
       if (res.data.items) {
         setLanguage(nextLanguage);
+        setPage(1);
         setDataSource(res.data.items);
-        setQuery(`language=${nextLanguage.toLowerCase()}`)
+        setQuery(`language=${nextLanguage.toLowerCase()}`);
       }
+    }).catch((err) => {
+      console.error(err);
+      notification.open({
+        message: '网络错误',
+      });
+    }).finally(() => {
+      setLoading(false);
+      setEnd(false);
+    });
+  }
+
+  const onLoadMore = () => {
+    const nextPage = page;
+    setLoading(true);
+    networkProvider.request({
+      url: `${NetworkProvider.baseUrl}&q=stars:%3E1+${language}&page=${nextPage}`,
+    }).then((res) => {
+      if (res.data.items) {
+        setPage(nextPage);
+        setDataSource((prevDataSource) => {
+          return prevDataSource.concat(res.data.items);
+        });
+      }
+    }).catch((err) => {
+      console.error(err);
+      notification.open({
+        message: '网络错误',
+      });
+      setEnd(true);
     }).finally(() => {
       setLoading(false);
     });
-  }
+  };
 
   return (
     <React.Fragment>
@@ -87,22 +124,28 @@ function Popular() {
           </span>
         </div>
       </section>
-      <section
-        className="relative grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+      <InfiniteScroller
+        initialLoad={false}
+        loadMore={onLoadMore}
+        hasMore={!loading || end}
       >
-        {
-          dataSource.map((value: any, index) => {
-            return (
-              <GithubItem
-                index={index + 1}
-                item={value}
-                key={`github-item-${value.id}`}
-              />
-            )
-          })
-        }
-      </section>
-      { loading ? <Loading /> : null }
+        <section
+          className="relative grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-center"
+        >
+          {
+            dataSource.map((value: any, index) => {
+              return (
+                <GithubItem
+                  index={index + 1}
+                  item={value}
+                  key={`github-item-${value.id}`}
+                />
+              )
+            })
+          }
+        </section>
+        <Spin />
+      </InfiniteScroller>
     </React.Fragment>
   )
 }
