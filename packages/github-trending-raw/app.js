@@ -189,6 +189,7 @@ const BattleInput = (props) => {
           style={{ width: 'calc(100% - 200px)' }}
           onChange={onChange}
           value={value}
+          onPressEnter={() => { onSubmit(type, value) }}
         />
         <Button
           type="primary"

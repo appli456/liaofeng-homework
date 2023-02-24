@@ -78,7 +78,7 @@ function buildGithubTrendingRaw() {
   const js = path.join(pathConfig.githubTrendingRaw, 'app.js');
   const html = path.join(pathConfig.githubTrendingRaw, 'index.html');
 
-  fs.copyFileSync(js, path.join(buildGithubTrending, 'index.css'));
+  fs.copyFileSync(js, path.join(buildGithubTrending, 'app.js'));
   fs.copyFileSync(html, path.join(buildGithubTrending, 'index.html'));
 }
 
