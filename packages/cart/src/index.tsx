@@ -1,10 +1,21 @@
 import React from 'react';
 import { createRoot } from "react-dom/client";
-import Cart from './pages/cart';
+import {
+  RecoilRoot
+} from 'recoil';
+
+import Cart from './pages/Cart';
+import 'antd/dist/reset.css';
 import './styles/index.scss';
 
 function App() {
-  return <Cart />;
+  return (
+    <RecoilRoot>
+      <React.Suspense>
+        <Cart />
+      </React.Suspense>
+    </RecoilRoot>
+  );
 }
 
 const domNode = document.getElementById('root');

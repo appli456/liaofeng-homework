@@ -4,6 +4,7 @@ const Card = antd.Card;
 const Typography = antd.Typography;
 const Button = antd.Button;
 const Input = antd.Input;
+const notification = antd.notification;
 
 const PopularEnum = {
   javascript: 'javascript',
@@ -420,7 +421,7 @@ function Popular() {
       }
     }).catch((err) => {
       console.error(err);
-      antd.notification.open({
+      notification.open({
         message: '网络错误',
       });
     }).finally(() => {
