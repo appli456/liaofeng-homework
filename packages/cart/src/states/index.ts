@@ -1,11 +1,20 @@
 import {
-  atom, RecoilValue, RecoilValueReadOnly,
+  atom,
   selector,
   selectorFamily,
 } from 'recoil';
-import { ProductData } from "../types";
 import axios from "axios";
-import {deleteProducts, divideArray} from "../utils";
+import {
+  addProducts,
+  deleteProducts,
+  divideArray,
+  updateProducts,
+} from "../utils";
+
+import {
+  CartData,
+  ProductData
+} from "../types";
 
 export const productDataSelector = selector<ProductData[]>({
   key: 'product-data-selector',
@@ -29,27 +38,33 @@ export const showProductData = selector<ProductData[][]>({
   }
 });
 
-type CartMethod = {
-  action: 'delete' | 'update' | 'read' | 'search',
-  payload: Pick<ProductData, 'id'> | null | Pick<ProductData, 'id'>[]
+export type MethodPayload = {
+  [K in keyof CartData]: CartData[K]
 }
 
-export const cartProductsData = atom<ProductData[]>({
+type CartAction = 'delete' | 'update' | 'read' | 'search' | 'add';
+export type CartPayload = MethodPayload | null | MethodPayload[];
+
+
+export const cartProductsData = atom<CartData[]>({
   key: 'cart-product-data',
   default: [],
 })
 
-export const cartProducts = selectorFamily<ProductData[], CartMethod>({
+export const cartProducts = selectorFamily<CartPayload, CartAction>({
   key: 'cart-products',
-  get: (method: CartMethod) => ({ get }) => {
+  get: () => ({ get }) => {
     return get(cartProductsData)
   },
 
-  set: (method: CartMethod) => ({ get, set }) => {
+  set: (action: CartAction) => ({ get, set }, payload) => {
     const products = get(cartProductsData);
-
-    if (method.action === 'delete') {
-      set(cartProductsData, deleteProducts(products, method.payload));
+    if (action === 'delete') {
+      set(cartProductsData, deleteProducts(products, payload as CartPayload));
+    } else if (action === 'update') {
+      set(cartProductsData, updateProducts(products, payload as CartPayload));
+    } else if (action === 'add') {
+      set(cartProductsData, addProducts(products, payload as CartPayload));
     }
   }
 })

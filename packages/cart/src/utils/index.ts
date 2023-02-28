@@ -1,5 +1,5 @@
-import {ProductData} from "../types";
-import product from "../components/Product";
+import {CartData, ProductData} from "../types";
+import {CartPayload} from "../states";
 
 export function divideArray<T>(arr: T[], groupNumber: number): T[][] {
   const nextArray: T[][] = [];
@@ -16,13 +16,13 @@ export function divideArray<T>(arr: T[], groupNumber: number): T[][] {
   return nextArray;
 }
 
-export function deleteProducts(products: ProductData[], ids: Pick<ProductData, 'id'> | null | Pick<ProductData, 'id'>[]): ProductData[] {
+export function deleteProducts(products: CartData[], ids: Pick<CartData, 'id'> | null | Pick<CartData, 'id'>[]): CartData[] {
   if (!ids) {
     return products;
   }
 
   if (Array.isArray(ids)) {
-    const nextArray: ProductData[] = [];
+    const nextArray: CartData[] = [];
     const idMap = ids.reduce((obj: Record<string, boolean>, id) => {
       if (Object.prototype.hasOwnProperty.call(obj, id.id)) {
         obj[id.id] = true;
@@ -42,4 +42,87 @@ export function deleteProducts(products: ProductData[], ids: Pick<ProductData, '
   return products.filter((product) => {
     return product.id !== ids.id;
   });
+}
+
+export function updateProducts(
+  products: CartData[],
+  payload: CartPayload) {
+  if (!payload) {
+    return products;
+  }
+
+  if (Array.isArray(payload)) {
+    const productMap = payload.reduce((obj: Record<string, CartData>, product) => {
+      if (Object.prototype.hasOwnProperty.call(obj, product.id)) {
+        obj[product.id] = product;
+      }
+
+      return obj
+    }, {});
+
+
+    return products.map((product) => {
+      if (Object.prototype.hasOwnProperty.call(productMap, product.id)) {
+        const value = productMap[product.id];
+
+        return {
+          ...product,
+          ...value,
+        }
+      }
+
+      return product;
+    });
+  }
+
+
+  return products.map((product) => {
+    if (product.id === payload.id) {
+      return {
+        ...product,
+        ...payload,
+      }
+    }
+
+    return product;
+  })
+}
+
+export function addProducts(
+  products: CartData[],
+  payload: CartPayload,
+) {
+  if (!payload) {
+    return products;
+  }
+
+  const productsMap = products.reduce((obj: Record<string, CartData>, product) => {
+    obj[product.id] = product;
+    return obj;
+  }, {});
+
+  if (Array.isArray(payload)) {
+    payload = payload.filter((p) => {
+      return !Object.prototype.hasOwnProperty.call(productsMap, p.id);
+    })
+
+    for (let i = 0; i < payload.length; ++i) {
+      const item = payload[i];
+      if (!item.quantity) {
+        item.quantity = 1;
+      }
+    }
+
+    return products.concat(payload);
+  }
+
+  if (!Object.prototype.hasOwnProperty.call(productsMap, payload.id)) {
+    if (!payload.quantity) {
+      payload.quantity = 1;
+    }
+
+    return products.concat([payload]);
+  }
+
+  return products;
 }

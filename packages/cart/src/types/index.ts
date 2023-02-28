@@ -7,3 +7,9 @@ export interface ProductData {
   name: string;
   price: string;
 }
+
+export interface CartData extends ProductData {
+  quantity: number;
+}
+
+

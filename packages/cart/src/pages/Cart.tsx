@@ -49,7 +49,7 @@ function Cart() {
               购物车
             </Typography.Text>
           </div>
-          <CartList list={list} />
+          <CartList />
           <div>
             <Typography.Text>总价: 0</Typography.Text>
             <Button

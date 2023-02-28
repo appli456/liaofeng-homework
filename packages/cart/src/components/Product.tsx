@@ -6,17 +6,26 @@ import {
 } from 'antd';
 
 import { ProductData } from '../types';
+import {useRecoilState} from "recoil";
+import {cartProducts} from "../states";
 
 interface ProductProps {
   data: ProductData;
-  onAddCart?: (data: ProductData) => void;
 }
 
 const Product: React.FC<ProductProps> = (props) => {
   const {
     data,
-    onAddCart,
   } = props;
+
+  const [ , addCartData ] = useRecoilState(cartProducts( 'add'))
+
+  function onAddCart() {
+    addCartData({
+      ...data,
+      quantity: 1,
+    });
+  }
 
   return (
     <Card
@@ -27,6 +36,7 @@ const Product: React.FC<ProductProps> = (props) => {
       <Button
         type="primary"
         block={true}
+        onClick={onAddCart}
       >
         加入购物车
       </Button>
