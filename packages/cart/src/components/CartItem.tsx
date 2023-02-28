@@ -28,17 +28,20 @@ const CartItem: React.FC<CartItemProps> = (props) => {
   }
 
   function onDecreaseQuantity() {
+    if (data.quantity <= 1) {
+      return;
+    }
     updateProducts({
       ...data,
       quantity: data.quantity - 1,
-    })
+    });
   }
 
   function onIncreaseQuantity() {
     updateProducts({
       ...data,
       quantity: data.quantity + 1,
-    })
+    });
   }
 
   return (
@@ -53,7 +56,7 @@ const CartItem: React.FC<CartItemProps> = (props) => {
       <div className="cart-item-content">
         <div>
           <p>{data.name}</p>
-          <p>数量:{data.quantity}</p>
+          <p>数量: {data.quantity}</p>
         </div>
         <div>
           <p>{`$ ${data.price}`}</p>

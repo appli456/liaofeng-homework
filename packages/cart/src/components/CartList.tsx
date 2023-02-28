@@ -3,7 +3,7 @@ import CartItem from "./CartItem";
 import {useRecoilValue} from "recoil";
 import { cartProductsData } from "../states";
 
-interface CartListProps {
+type CartListProps = {
   // list: ProductData[];
 }
 
@@ -16,7 +16,7 @@ const CartList: React.FC<CartListProps> = () => {
       {
         list && list.length ? list.map((v, i) => {
           return (
-            <CartItem data={v} key={i} />
+            <CartItem data={v} key={`${i}-${v.id}`} />
           )
         }) : null
       }

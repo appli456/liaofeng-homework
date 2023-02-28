@@ -3,13 +3,13 @@ import { useRecoilValue } from 'recoil';
 import { Layout, Col, Row, Typography, Drawer, Button } from 'antd';
 import { ShoppingCartOutlined } from "@ant-design/icons";
 
-import {productDataSelector, showProductData} from "../states";
+import { showProductData} from "../states";
 import ProductList from "../components/ProductList";
 import CartList from "../components/CartList";
 import { ProductData } from "../types";
+import CartMenu from "../components/CartMenu";
 
 function Cart() {
-  const list = useRecoilValue<ProductData[]>(productDataSelector);
   const data = useRecoilValue<ProductData[][]>(showProductData);
   const [ open, setOpen ] = useState(false);
 
@@ -27,7 +27,7 @@ function Cart() {
       </div>
       <Row className="content">
         <Col span={6}>
-          <Typography.Text>Sizes:</Typography.Text>
+          <CartMenu />
         </Col>
         <Col span={18}>
           <Typography.Text>Product(s) Found</Typography.Text>
@@ -50,7 +50,7 @@ function Cart() {
             </Typography.Text>
           </div>
           <CartList />
-          <div>
+          <div className="cart-sidebar-footer">
             <Typography.Text>总价: 0</Typography.Text>
             <Button
               type="primary"

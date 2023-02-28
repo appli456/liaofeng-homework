@@ -1,5 +1,5 @@
 import {
-  atom,
+  atom, atomFamily,
   selector,
   selectorFamily,
 } from 'recoil';
@@ -13,8 +13,14 @@ import {
 
 import {
   CartData,
-  ProductData
+  ProductData,
+  ProductQuery,
 } from "../types";
+
+export const productQuery = atom({
+  key: 'product-query',
+  default: {} as ProductQuery,
+});
 
 export const productDataSelector = selector<ProductData[]>({
   key: 'product-data-selector',
