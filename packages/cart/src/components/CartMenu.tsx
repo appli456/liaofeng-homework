@@ -25,7 +25,7 @@ function CartMenu(props: CartMenuProps) {
   return (
     <div>
       <div>
-        <Typography.Text>尺码:</Typography.Text>
+        <Typography.Title level={3}>尺码:</Typography.Title>
         <div>
           <Button
             onClick={createChangeSize('xs')}
@@ -66,7 +66,7 @@ function CartMenu(props: CartMenuProps) {
       </div>
 
       <div>
-        <Typography.Text>排序:</Typography.Text>
+        <Typography.Title level={3}>排序:</Typography.Title>
         <div>
           <Button onClick={createSort('price')}>售价</Button>
           <Button onClick={createSort('popularity')}>人气</Button>

@@ -1,16 +1,19 @@
 FROM node
 
 ## Install dependencies in the root of the Container
-COPY package.json yarn.lock ./
+COPY package.json lerna.json ./
 ENV NODE_PATH=/node_modules
 ENV PATH=$PATH:/node_modules/.bin
-RUN npm
-
-# Add project files to /app route in Container
-ADD . /packages
 
 # Set working dir to /app
-WORKDIR /packages
+WORKDIR .
+# Add project files to /app route in Container
+ADD . .
 
-# expose port 3000
-EXPOSE 3000
+RUN rm -rf node_modules
+RUN npx lerna bootstrap
+
+EXPOSE 5173
+
+CMD ["npm", "run", "build"]
+

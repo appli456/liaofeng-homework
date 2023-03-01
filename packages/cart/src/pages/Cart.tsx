@@ -80,7 +80,7 @@ function Cart() {
           <CartMenu onChangeSize={onChangeSize} onSort={onSort} />
         </Col>
         <Col span={18}>
-          <Typography.Text>Product(s) Found</Typography.Text>
+          <Typography.Title level={3}>Product(s) Found</Typography.Title>
           <ProductList list={list} />
         </Col>
       </Row>

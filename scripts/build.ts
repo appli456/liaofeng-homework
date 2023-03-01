@@ -82,6 +82,19 @@ function buildGithubTrendingRaw() {
   fs.copyFileSync(html, path.join(buildGithubTrending, 'index.html'));
 }
 
+function buildCart() {
+  const dist = path.join(pathConfig.cart, 'dist');
+  const buildCart = path.join(pathConfig.build, 'cart');
+
+  if (!fs.existsSync(buildCart)) {
+    fs.mkdirSync(buildCart);
+  }
+
+  exec("cd packages/cart && npm run build", {}, () => {
+    copyFolder(dist, buildCart).then();
+  });
+}
+
 function copyToGithubPage() {
   cp('-rf', pathConfig.build, path.join(pathConfig.appDirectory, '..', 'appli456.github.io'))
 }
@@ -95,5 +108,6 @@ buildBarrage();
 buildEnterprise();
 buildGithubTrending();
 buildGithubTrendingRaw();
+buildCart();
 
 copyToGithubPage();
