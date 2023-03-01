@@ -14,8 +14,10 @@ export interface CartData extends ProductData {
   quantity: number;
 }
 
+export type SortBy = 'price' | 'popularity' | 'sales'
+
 export type ProductQuery = {
-  sortBy?: 'price' | 'popularity' | 'sales',
+  sortBy?: SortBy,
   size?: string,
 }
 

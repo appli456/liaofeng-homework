@@ -1,48 +1,18 @@
 import {
-  atom, atomFamily,
-  selector,
+  atom, selector,
   selectorFamily,
 } from 'recoil';
-import axios from "axios";
 import {
   addProducts,
   deleteProducts,
-  divideArray,
   updateProducts,
 } from "../utils";
 
 import {
   CartData,
-  ProductData,
-  ProductQuery,
 } from "../types";
-
-export const productQuery = atom({
-  key: 'product-query',
-  default: {} as ProductQuery,
-});
-
-export const productDataSelector = selector<ProductData[]>({
-  key: 'product-data-selector',
-  get: async ({ get }) => {
-    const response = await axios.get('https://63ef1aa7271439b7fe683af3.mockapi.io/products');
-    const json = response.data;
-    if (Array.isArray(json)) {
-      return json;
-    }
-
-    return [];
-  }
-});
-
-export const showProductData = selector<ProductData[][]>({
-  key: 'show-product-data',
-  get: ({ get }) => {
-    const productData = get(productDataSelector);
-
-    return divideArray(productData, 4);
-  }
-});
+import cache from "../utils/Cache";
+import {notification} from "antd";
 
 export type MethodPayload = {
   [K in keyof CartData]: CartData[K]
@@ -51,10 +21,9 @@ export type MethodPayload = {
 type CartAction = 'delete' | 'update' | 'read' | 'search' | 'add';
 export type CartPayload = MethodPayload | null | MethodPayload[];
 
-
 export const cartProductsData = atom<CartData[]>({
   key: 'cart-product-data',
-  default: [],
+  default: cache.get('cart-data') || [],
 })
 
 export const cartProducts = selectorFamily<CartPayload, CartAction>({
@@ -66,11 +35,29 @@ export const cartProducts = selectorFamily<CartPayload, CartAction>({
   set: (action: CartAction) => ({ get, set }, payload) => {
     const products = get(cartProductsData);
     if (action === 'delete') {
-      set(cartProductsData, deleteProducts(products, payload as CartPayload));
+      const newValue = deleteProducts(products, payload as CartPayload)
+      set(cartProductsData, newValue);
+      cache.set('cart-data', newValue)
     } else if (action === 'update') {
-      set(cartProductsData, updateProducts(products, payload as CartPayload));
+      const newValue = updateProducts(products, payload as CartPayload);
+      set(cartProductsData, newValue);
+      cache.set('cart-data', newValue)
     } else if (action === 'add') {
-      set(cartProductsData, addProducts(products, payload as CartPayload));
+      const newValue = addProducts(products, payload as CartPayload);
+      if (newValue.length === products.length) {
+        notification.warning({message: '已在购物车中'});
+      }
+
+      set(cartProductsData, newValue);
+      cache.set('cart-data', newValue)
     }
+  }
+});
+
+export const cartCount = selector({
+  key: 'cart-count',
+  get: ({ get }) => {
+    const products = get(cartProductsData);
+    return products.length;
   }
 })

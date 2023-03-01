@@ -1,30 +1,76 @@
 import React from 'react';
 import {Button, Typography} from "antd";
-import {useRefreshProductList} from "../hooks/useRefreshProductList";
+import {SortBy} from "../types";
 
-function CartMenu() {
+interface CartMenuProps {
+  onChangeSize: (size: string) => void;
+  onSort: (sortBy: SortBy) => void;
+}
+
+function CartMenu(props: CartMenuProps) {
+  const { onChangeSize, onSort } = props;
+
+  function createChangeSize(size: string) {
+    return () => {
+      onChangeSize(size);
+    }
+  }
+
+  function createSort(sortBy: SortBy) {
+    return () => {
+      onSort(sortBy);
+    }
+  }
 
   return (
     <div>
       <div>
         <Typography.Text>尺码:</Typography.Text>
         <div>
-          <Button onClick={useRefreshProductList({ size: Math.random().toString() })}>XS</Button>
-          <Button>S</Button>
-          <Button>M</Button>
-          <Button>ML</Button>
-          <Button>L</Button>
-          <Button>XL</Button>
-          <Button>XXL</Button>
+          <Button
+            onClick={createChangeSize('xs')}
+          >
+            XS
+          </Button>
+          <Button
+            onClick={createChangeSize('s')}
+          >
+            S
+          </Button>
+          <Button
+            onClick={createChangeSize('m')}
+          >
+            M
+          </Button>
+          <Button
+            onClick={createChangeSize('ml')}
+          >
+            ML
+          </Button>
+          <Button
+            onClick={createChangeSize('l')}
+          >
+            L
+          </Button>
+          <Button
+            onClick={createChangeSize('xl')}
+          >
+            XL
+          </Button>
+          <Button
+            onClick={createChangeSize('xxl')}
+          >
+            XXL
+          </Button>
         </div>
       </div>
 
       <div>
         <Typography.Text>排序:</Typography.Text>
         <div>
-          <Button>售价</Button>
-          <Button>人气</Button>
-          <Button>销量</Button>
+          <Button onClick={createSort('price')}>售价</Button>
+          <Button onClick={createSort('popularity')}>人气</Button>
+          <Button onClick={createSort('sales')}>销量</Button>
         </div>
       </div>
     </div>

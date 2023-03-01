@@ -126,3 +126,11 @@ export function addProducts(
 
   return products;
 }
+
+export function countPrice(products: ProductData[]): string {
+  const total = products.reduce((prevTotal: number, product: ProductData) => {
+    const price = parseFloat(product.price) * 100;
+    return prevTotal + price
+  }, 0);
+  return (total / 100).toFixed(2);
+}
