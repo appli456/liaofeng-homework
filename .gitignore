@@ -614,3 +614,5 @@ FodyWeavers.xsd
 packages/enterprise/styles/output.css
 
 build
+
+packages/cart/e2e/screenshots/

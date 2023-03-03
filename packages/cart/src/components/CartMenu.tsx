@@ -23,7 +23,7 @@ function CartMenu(props: CartMenuProps) {
   }
 
   return (
-    <div>
+    <div className="cart-menu">
       <div>
         <Typography.Title level={3}>尺码:</Typography.Title>
         <div>

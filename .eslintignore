@@ -1,6 +1,9 @@
 node_modules
 scripts
 .eslintrc.js
+jest.config.js
+jest-e2e.config.js
+packages/**/e2e/**.js
 packages/**/tailwind.config.js
 *.css
 *.scss

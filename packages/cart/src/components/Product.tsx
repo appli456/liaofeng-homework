@@ -29,7 +29,13 @@ const Product: React.FC<ProductProps> = (props) => {
 
   return (
     <Card
-      cover={(<Image src={data.image} alt={data.name} preview={false} />)}
+      cover={(
+        <Image
+          src={data.image}
+          alt={data.name}
+          preview={false}
+        />)}
+      className="product-item"
     >
       <p>{data.name}</p>
       <p>{`$ ${data.price}`}</p>
