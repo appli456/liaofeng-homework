@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   window.sidebarModule.init();
   window.animationModule.init();
+  window.lazyLoadModule.init();
 
   function setData(data) {
     let list = [];

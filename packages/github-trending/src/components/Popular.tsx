@@ -15,8 +15,20 @@ function Popular() {
   const [end, setEnd] = useState(false);
 
   useEffect(() => {
-    networkProvider.request({ url: `${NetworkProvider.baseUrl}&q=stars:%3E1+${initialPopularLanguage()}` }).then((res) => {
+    const cache = sessionStorage.getItem(`popular-${initialPopularLanguage()}`);
+    if (cache) {
+      const cacheData = JSON.parse(cache);
+      if (Array.isArray(cacheData) && cacheData.length) {
+        setDataSource(JSON.parse(cache));
+        setPage(Math.ceil(cacheData.length / 30));
+        setLoading(false);
+        return;
+      }
+    }
+
+    networkProvider.request({url: `${NetworkProvider.baseUrl}&q=stars:%3E1+${initialPopularLanguage()}`}).then((res) => {
       setDataSource(res.data.items);
+      sessionStorage.setItem(`popular-${initialPopularLanguage()}`, JSON.stringify(res.data.items));
     }).finally(() => {
       setLoading(false);
     });
@@ -27,6 +39,19 @@ function Popular() {
       return;
     }
     setLoading(true);
+    const cache =  sessionStorage.getItem(`popular-${nextLanguage}`);
+    if (cache) {
+      const cacheData = JSON.parse(cache);
+      if (Array.isArray(cacheData) && cacheData.length) {
+        setDataSource(JSON.parse(cache));
+        setLanguage(nextLanguage);
+        setPage(Math.ceil(cacheData.length / 30));
+        setLoading(false);
+        setQuery(`language=${nextLanguage.toLowerCase()}`);
+        return;
+      }
+    }
+
     networkProvider.request({
       url: `${NetworkProvider.baseUrl}&q=stars:%3E1+${nextLanguage}`
     }).then((res) => {
@@ -35,6 +60,7 @@ function Popular() {
         setPage(1);
         setDataSource(res.data.items);
         setQuery(`language=${nextLanguage.toLowerCase()}`);
+        sessionStorage.setItem(`popular-${nextLanguage}`, JSON.stringify(res.data.items))
       }
     }).catch((err) => {
       console.error(err);
@@ -56,11 +82,12 @@ function Popular() {
       if (res.data.items) {
         setPage(nextPage);
         setDataSource((prevDataSource) => {
-          return prevDataSource.concat(res.data.items);
+          const dataSource = prevDataSource.concat(res.data.items);
+          sessionStorage.setItem(`popular-${language}`, JSON.stringify(dataSource))
+          return dataSource;
         });
       }
     }).catch((err) => {
-      console.error(err);
       notification.open({
         message: '网络错误',
       });
@@ -128,6 +155,7 @@ function Popular() {
         initialLoad={false}
         loadMore={onLoadMore}
         hasMore={!loading || end}
+        className="relative justify-center flex flex-col items-center"
       >
         <section
           className="relative grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-center"
@@ -138,7 +166,7 @@ function Popular() {
                 <GithubItem
                   index={index + 1}
                   item={value}
-                  key={`github-item-${value.id}`}
+                  key={`github-item-${value.id}-${index}`}
                 />
               )
             })
