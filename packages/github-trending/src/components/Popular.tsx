@@ -74,7 +74,7 @@ function Popular() {
   }
 
   const onLoadMore = () => {
-    const nextPage = page;
+    const nextPage = page + 1;
     setLoading(true);
     networkProvider.request({
       url: `${NetworkProvider.baseUrl}&q=stars:%3E1+${language}&page=${nextPage}`,
